@@ -13,11 +13,16 @@ $powerUp: red;
 
 @media screen and (min-width: 320px){
 
+    .playerSelect{
+        text-align: center;
+        font-size: 50px;
+    }
+
     .topBar{
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
-        margin-top: 80px;
+        margin-top: 40px;
         width: 85%;
         height: 30px;
         background-color: wheat;
@@ -42,7 +47,7 @@ $powerUp: red;
         flex-wrap: wrap;
         margin: 0 auto;
         margin-top: 50px;
-        width: 95%;
+        width: 400px;
         height: 300px;
         background-color: rgb(167, 150, 119);
 
@@ -55,6 +60,40 @@ $powerUp: red;
         }
         .slotTwo, .slotThree, .slotFour, .slotFive, .slotSix, .slotSeven, .slotEight, .slotNine{
             @extend .slotOne;
+        }
+    }
+
+    .theTextArea{
+        display: block;
+        height: 120px;
+        width: 70%;
+        background-color: rgb(20, 20, 20);
+        box-shadow: 1px 1px 20px 1px black inset;
+        margin: 0 auto;
+        margin-top: 10px;
+        padding: 10px;
+        border: 2px dotted green;
+
+        .yellowColor{
+            height: 20px;
+            width: 20px;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+
+        .cyanColor{
+            @extend .yellowColor;
+            background-color: cyan;
+        }
+
+        .numDisplay{
+            display: block;
+            text-align: center;
+            font-size: 70px;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            margin-top: -50px;
         }
     }
 }
