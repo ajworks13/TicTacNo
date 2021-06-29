@@ -1,0 +1,60 @@
+*{
+    background-color: rgb(40, 42, 61);
+    color: white;
+}
+
+// VARIABLES
+$notLit: rgb(119, 119, 119);
+$playerOneLit: rgb(255, 238, 0);
+$playerTwoLit: rgb(0, 204, 255);
+$powerUp: red;
+
+
+
+@media screen and (min-width: 320px){
+
+    .topBar{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 80px;
+        width: 85%;
+        height: 30px;
+        background-color: wheat;
+
+        .one{
+            background-color: $notLit;
+            width: 15px;
+            height: 20px;
+            margin-left: 2px;
+            margin-right: 2px;
+            margin-top: 5px;
+            border: 1px solid black;
+        }
+        .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten, .eleven, .twelve{
+            @extend .one;
+        }
+    }
+
+    .ticTacToeBoard{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 95%;
+        height: 300px;
+        background-color: rgb(167, 150, 119);
+
+        .slotOne{
+            height: 80px;
+            margin-top: 10px;
+            width: 30%;
+            background-color: wheat;
+            box-shadow: 1px 1px 13px 1px black inset;
+        }
+        .slotTwo, .slotThree, .slotFour, .slotFive, .slotSix, .slotSeven, .slotEight, .slotNine{
+            @extend .slotOne;
+        }
+    }
+}
