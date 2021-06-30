@@ -1,7 +1,7 @@
 /*
                 FORMULA for taking turns
 
-                
+
 let theTextArea = document.querySelector('.theTextArea');
 var count = 0;
 let p1, p2;
@@ -45,6 +45,8 @@ let slotOne = document.querySelector(".slotOne");
 
 let theTextArea = document.querySelector(".theTextArea");
 
+let numDisplay = document.querySelector(".numDisplay");
+
 let two = document.querySelector(".two");
 let three = document.querySelector(".three");
 let four = document.querySelector(".four");
@@ -63,24 +65,76 @@ const gameStart = () => {
     //alert("Hello and welcome to 'TicTacNo'!\nEach player will click on the bottom black box to roll a number between 1 - 6. If you land on the POWER BOX, you will get the ability to take 2 slots at once when you arrive back around to the starting line. Same Tic tac toe rules, but with chances.\nEnjoy!")
 
     let gameOver = false;
+    let p1, p2;
+    let count = 0;
 
     const playerOne = () => {
+        const person1 = "Player 1";
         console.log("player 1 go!");
         theTextArea.onclick = () => {
             console.log("player 1 clicked");
+            count++;
+            console.log(count);
+            dice(person1);
+            if(count === 1){
+                clearInterval(p1);
+                count = 0;
+                p2 = setInterval(playerTwo, 1000);
+            }
         }
     }
 
     const playerTwo = () => {
+        const person2 = "Player 2";
         console.log("player 2 go!");
         theTextArea.onclick = () => {
             console.log("player 2 clicked");
+            count++;
+            console.log(count);
+            dice(person2);
+            if(count === 1){
+                clearInterval(p2);
+                count = 0;
+                p1 = setInterval(playerOne, 1000);
+            }
         }
     }
 
-    const dice = () => {
-        const theDice = Math.floor((Math.random() * 6) + 1);
+    const dice = (person) => {
+        let theDice = Math.floor((Math.random() * 2) + 1);
+        console.log(`${person} rolled for number: ${theDice}`);
+        numDisplay.innerHTML = `${person}: (${theDice})`;
 
+        // if the player gets any number after the first roll, their previous box will be replaced with a gray box as if it moved forward.
+
+        //figure out how to keep moving forward as you roll the dice multiple times.
+        if(person === "Player 1"){
+            if(theDice === 1){
+                two.style.backgroundColor = 'yellow';
+                three.style.backgroundColor = 'gray';
+                four.style.backgroundColor = 'gray';
+                five.style.backgroundColor = 'gray';
+                six.style.backgroundColor = 'gray';
+                seven.style.backgroundColor = 'gray';
+                eight.style.backgroundColor = 'gray';
+                nine.style.backgroundColor = 'gray';
+                ten.style.backgroundColor = 'gray';
+                eleven.style.backgroundColor = 'gray';
+                twelve.style.backgroundColor = 'gray';
+            }else if(theDice === 2){
+                two.style.backgroundColor = 'gray';
+                three.style.backgroundColor = 'yellow';
+                four.style.backgroundColor = 'gray';
+                five.style.backgroundColor = 'gray';
+                six.style.backgroundColor = 'gray';
+                seven.style.backgroundColor = 'gray';
+                eight.style.backgroundColor = 'gray';
+                nine.style.backgroundColor = 'gray';
+                ten.style.backgroundColor = 'gray';
+                eleven.style.backgroundColor = 'gray';
+                twelve.style.backgroundColor = 'gray';
+            }
+        }
         
     }
 
@@ -129,9 +183,7 @@ const gameStart = () => {
         console.log("clicked");
     }
 
-    playerOne();
-    setTimeout(function(){console.log('here');}, 3000);
-    playerTwo();
+    p1 = setInterval(playerOne, 1000);
     
 
 
