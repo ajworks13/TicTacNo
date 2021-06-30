@@ -101,9 +101,17 @@ const gameStart = () => {
     }
 
     const dice = (person) => {
+        // If player 1 goes and 'box 1' is selected, then I can add a temp string or num to determine that it isnt selectable at the moment. After players goes full circle, all boxes get wipped out to be refilled again for another turn.
+        
+        // for Player 1.
+        let box1_1, box1_2, box1_3, box1_4, box1_5, box1_6, box1_7, box1_8, box1_9, box1_10, box1_11, box1_12;
+        // for Player 2.
+        let box2_1, box2_2, box2_3, box2_4, box2_5, box2_6, box2_7, box2_8, box2_9, box2_10, box2_11, box2_12;
+
+        // set to 6.
         let theDice = Math.floor((Math.random() * 2) + 1);
         console.log(`${person} rolled for number: ${theDice}`);
-        numDisplay.innerHTML = `${person}: (${theDice})`;
+        numDisplay.innerHTML = `${person} rolled: (${theDice})`;
 
         // if the player gets any number after the first roll, their previous box will be replaced with a gray box as if it moved forward.
 
