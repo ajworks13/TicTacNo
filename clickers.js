@@ -41,23 +41,6 @@ p1 = setInterval(playerOne, 1000);
 
 */
 
-// let slotOne = document.querySelector(".slotOne");
-
-// let theTextArea = document.querySelector(".theTextArea");
-
-// let numDisplay = document.querySelector(".numDisplay");
-
-// let two = document.querySelector(".two");
-// let three = document.querySelector(".three");
-// let four = document.querySelector(".four");
-// let five = document.querySelector(".five");
-// let six = document.querySelector(".six");
-// let seven = document.querySelector(".seven");
-// let eight = document.querySelector(".eight");
-// let nine = document.querySelector(".nine");
-// let ten = document.querySelector(".ten");
-// let eleven = document.querySelector(".eleven");
-// let twelve = document.querySelector(".twelve");
 
 
 
@@ -75,12 +58,12 @@ const gameStart = () => {
     let four = document.querySelector(".four");
     let five = document.querySelector(".five");
     let six = document.querySelector(".six");
-    let seven = document.querySelector(".seven");
-    let eight = document.querySelector(".eight");
-    let nine = document.querySelector(".nine");
-    let ten = document.querySelector(".ten");
-    let eleven = document.querySelector(".eleven");
-    let twelve = document.querySelector(".twelve");
+    // let seven = document.querySelector(".seven");
+    // let eight = document.querySelector(".eight");
+    // let nine = document.querySelector(".nine");
+    // let ten = document.querySelector(".ten");
+    // let eleven = document.querySelector(".eleven");
+    // let twelve = document.querySelector(".twelve");
 
     let gameOver = false;
     let rolled1 = 0;
@@ -148,12 +131,7 @@ const gameStart = () => {
                 four.style.backgroundColor = 'gray';
                 five.style.backgroundColor = 'gray';
                 six.style.backgroundColor = 'gray';
-                seven.style.backgroundColor = 'gray';
-                eight.style.backgroundColor = 'gray';
-                nine.style.backgroundColor = 'gray';
-                ten.style.backgroundColor = 'gray';
-                eleven.style.backgroundColor = 'gray';
-                twelve.style.backgroundColor = 'gray';
+                
 
                 if(two.style.backgroundColor = 'yellow' && rolled1 === 2){
                     two.style.backgroundColor = 'gray';
@@ -161,24 +139,14 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
+                    
                 }else if(three.style.backgroundColor = 'yellow' && rolled1 === 3){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'yellow';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
+                    
                 }
                 else if(four.style.backgroundColor = 'yellow' && rolled1 === 4){
                     two.style.backgroundColor = 'gray';
@@ -186,12 +154,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'yellow';
                     six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
+                    
                 }
                 else if(five.style.backgroundColor = 'yellow' && rolled1 === 5){
                     two.style.backgroundColor = 'gray';
@@ -199,12 +162,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'yellow';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
+                    
                 }
                 else if(six.style.backgroundColor = 'yellow' && rolled1 === 6){
                     two.style.backgroundColor = 'gray';
@@ -212,93 +170,9 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'yellow';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
+                    
                 }
-                else if(seven.style.backgroundColor = 'yellow' && rolled1 === 7){
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'yellow';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
-                }
-                else if(eight.style.backgroundColor = 'yellow' && rolled1 === 8){
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'yellow';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
-                }
-                else if(nine.style.backgroundColor = 'yellow' && rolled1 === 9){
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'yellow';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
-                }
-                else if(ten.style.backgroundColor = 'yellow' && rolled1 === 10){
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'yellow';
-                    twelve.style.backgroundColor = 'gray';
-                }
-                else if(eleven.style.backgroundColor = 'yellow' && rolled1 === 11){
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'yellow';
-                }
-                else if(twelve.style.backgroundColor = 'yellow' && rolled1 === 12){
-                    console.log("-- LAP ONE! --");
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
-                    rolled1 = 0;
-                }
+                
             }else if(theDice === 2){
                 rolled1++;
                 
@@ -307,34 +181,8 @@ const gameStart = () => {
                 four.style.backgroundColor = 'gray';
                 five.style.backgroundColor = 'gray';
                 six.style.backgroundColor = 'gray';
-                seven.style.backgroundColor = 'gray';
-                eight.style.backgroundColor = 'gray';
-                nine.style.backgroundColor = 'gray';
-                ten.style.backgroundColor = 'gray';
-                eleven.style.backgroundColor = 'gray';
-                twelve.style.backgroundColor = 'gray';
+               
 
-                if(two.style.backgroundColor = 'yellow' && rolled1 === 2){
-                    console.log('// going from 1 to 3');
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'yellow';
-                }
-
-                if(three.style.backgroundColor = 'yellow' && rolled1 === 2){
-                    console.log('going from 3 to five');
-                    two.style.backgroundColor = 'gray';
-                    three.style.backgroundColor = 'gray';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'yellow';
-                    six.style.backgroundColor = 'gray';
-                    seven.style.backgroundColor = 'gray';
-                    eight.style.backgroundColor = 'gray';
-                    nine.style.backgroundColor = 'gray';
-                    ten.style.backgroundColor = 'gray';
-                    eleven.style.backgroundColor = 'gray';
-                    twelve.style.backgroundColor = 'gray';
-                }
             }
         }
         
@@ -342,7 +190,7 @@ const gameStart = () => {
 
     const powerSelector = () => {
         //selects slot two - twelve
-        const randomPowerSpawn = Math.floor((Math.random() * 11) + 1);
+        const randomPowerSpawn = Math.floor((Math.random() * 5) + 1);
         console.log(randomPowerSpawn);
     
         //if selectors
@@ -360,24 +208,24 @@ const gameStart = () => {
         else if(randomPowerSpawn === 5){
             six.style.border = "2px solid red";
         }
-        else if(randomPowerSpawn === 6){
-            seven.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 7){
-            eight.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 8){
-            nine.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 9){
-            ten.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 10){
-            eleven.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 11){
-            twelve.style.border = "2px solid red";
-        }
+        // else if(randomPowerSpawn === 6){
+        //     seven.style.border = "2px solid red";
+        // }
+        // else if(randomPowerSpawn === 7){
+        //     eight.style.border = "2px solid red";
+        // }
+        // else if(randomPowerSpawn === 8){
+        //     nine.style.border = "2px solid red";
+        // }
+        // else if(randomPowerSpawn === 9){
+        //     ten.style.border = "2px solid red";
+        // }
+        // else if(randomPowerSpawn === 10){
+        //     eleven.style.border = "2px solid red";
+        // }
+        // else if(randomPowerSpawn === 11){
+        //     twelve.style.border = "2px solid red";
+        // }
     }
     powerSelector();
 

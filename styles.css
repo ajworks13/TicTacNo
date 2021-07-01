@@ -21,7 +21,7 @@
     height: 30px;
     background-color: wheat;
   }
-  .topBar .one, .topBar .two, .topBar .three, .topBar .four, .topBar .five, .topBar .six, .topBar .seven, .topBar .eight, .topBar .nine, .topBar .ten, .topBar .eleven, .topBar .twelve {
+  .topBar .one, .topBar .two, .topBar .three, .topBar .four, .topBar .five, .topBar .six {
     background-color: #777777;
     width: 15px;
     height: 20px;
