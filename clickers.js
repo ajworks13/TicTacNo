@@ -126,6 +126,12 @@ const gameStart = () => {
        
 
         //figure out how to keep moving forward as you roll the dice multiple times.
+
+        /*
+            Check the following combinations
+            323 - 3112 - 3111
+        */
+       
         if(person === "Player 1"){
             
             if(theDice === 1){
@@ -175,7 +181,50 @@ const gameStart = () => {
                 }
 
                 
+                // from 3 to 4
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled3 === 1){
+                    console.log('from 3 to 4');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'yellow';
+                }
 
+                // from 4 to 5
+                if(five.style.backgroundColor = 'yellow' && rolled1 === 2 && rolled2 === 0 && rolled3 === 1){
+                    console.log('from 4 to 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'yellow';
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 1){
+                    console.log('PAST 5 from 321');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 3 && rolled2 === 1 && rolled3 === 1){
+                    console.log('PAST 5 from 3111');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
 
                 
             }else if(theDice === 2){
@@ -197,18 +246,55 @@ const gameStart = () => {
                 }
 
                 // from 1 to 3
-                if(two.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1){
+                if(two.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 0){
                     console.log('from 1 to 3');
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'yellow';
                 }
 
+                // from 3 to 5
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 1 && rolled3 === 1){
+                    console.log('from 3 to 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'yellow';
+                }
+
+                // from 4 through 5
+                if(five.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 1){
+                    console.log('from 4 through 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 2 && rolled2 === 1 && rolled3 === 1){
+                    console.log('PAST 5 from 3112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
             }else if(theDice === 3){
                 rolled3++;
                 four.style.backgroundColor = 'yellow';
 
-                if(four.style.backgroundColor = 'yellow' && rolled3 === 2){
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 0 && rolled3 === 2){
                     four.style.backgroundColor = 'gray';
                     console.log('went threw the whole board');
                     rolled3 = 0;
@@ -220,6 +306,45 @@ const gameStart = () => {
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'yellow';
+                }
+
+                // from 3 through PAST 5 (restart)
+                if(five.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled3 === 2){
+                    console.log('went threw board');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 1 && rolled3 === 2){
+                    console.log('PAST 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 2 && rolled2 === 0 && rolled3 === 2){
+                    console.log('PAST 5 from 3113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
                 }
             }
 
