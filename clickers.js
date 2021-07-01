@@ -68,6 +68,7 @@ const gameStart = () => {
     let gameOver = false;
     let rolled1 = 0;
     let rolled2 = 0;
+    let rolled3 = 0;
     let p1, p2;
     let count = 0;
 
@@ -107,14 +108,17 @@ const gameStart = () => {
         // If player 1 goes and 'box 1' is selected, then I can add a temp string or num to determine that it isnt selectable at the moment. After players goes full circle, all boxes get wipped out to be refilled again for another turn.
 
         // for Player 1.
-        let box1_1, box1_2, box1_3, box1_4, box1_5, box1_6, box1_7, box1_8, box1_9, box1_10, box1_11, box1_12;
+        let box1_1, box1_2, box1_3, box1_4, box1_5, box1_6;
         // for Player 2.
-        let box2_1, box2_2, box2_3, box2_4, box2_5, box2_6, box2_7, box2_8, box2_9, box2_10, box2_11, box2_12;
+        let box2_1, box2_2, box2_3, box2_4, box2_5, box2_6;
 
         
 
         // set to 6.
-        let theDice = Math.floor((Math.random() * 2) + 1);
+        //let theDice = Math.floor((Math.random() * 2) + 1);
+
+        //for testing
+        let theDice = 3;
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
 
@@ -127,25 +131,16 @@ const gameStart = () => {
                 rolled1++;
                 console.log("rolled = " + rolled1);
                 two.style.backgroundColor = 'yellow';
-                three.style.backgroundColor = 'gray';
-                four.style.backgroundColor = 'gray';
-                five.style.backgroundColor = 'gray';
-                six.style.backgroundColor = 'gray';
                 
-
+                //--------------- 1 by 1 --------------------------------------------------------------
                 if(two.style.backgroundColor = 'yellow' && rolled1 === 2){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'yellow';
-                    four.style.backgroundColor = 'gray';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
                     
                 }else if(three.style.backgroundColor = 'yellow' && rolled1 === 3){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'yellow';
-                    five.style.backgroundColor = 'gray';
-                    six.style.backgroundColor = 'gray';
                     
                 }
                 else if(four.style.backgroundColor = 'yellow' && rolled1 === 4){
@@ -153,7 +148,6 @@ const gameStart = () => {
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'yellow';
-                    six.style.backgroundColor = 'gray';
                     
                 }
                 else if(five.style.backgroundColor = 'yellow' && rolled1 === 5){
@@ -170,19 +164,39 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
-                    
+                    rolled1 = 0;
+                    console.log("-- LAP 1 --");
                 }
+                //--------------- 1 by 1 --------------------------------------------------------------
+
                 
             }else if(theDice === 2){
-                rolled1++;
+                rolled2++;
                 
-                two.style.backgroundColor = 'gray';
+                // two.style.backgroundColor = 'gray';
                 three.style.backgroundColor = 'yellow';
-                four.style.backgroundColor = 'gray';
-                five.style.backgroundColor = 'gray';
-                six.style.backgroundColor = 'gray';
                
+                if(three.style.backgroundColor = 'yellow' && rolled2 === 2){
+                    three.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'yellow';
+                }
 
+                if(five.style.backgroundColor = 'yellow' && rolled2 === 3){
+                    three.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    console.log('went threw the whole board');
+                    rolled2 = 0;
+                }
+
+            }else if(theDice === 3){
+                rolled3++;
+                four.style.backgroundColor = 'yellow';
+
+                if(four.style.backgroundColor = 'yellow' && rolled3 === 2){
+                    four.style.backgroundColor = 'gray';
+                    console.log('went threw the whole board');
+                    rolled3 = 0;
+                }
             }
         }
         
