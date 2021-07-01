@@ -115,10 +115,10 @@ const gameStart = () => {
         
 
         // set to 6.
-        //let theDice = Math.floor((Math.random() * 2) + 1);
+        let theDice = Math.floor((Math.random() * 3) + 1);
 
         //for testing
-        let theDice = 3;
+        //let theDice = 1;
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
 
@@ -127,30 +127,35 @@ const gameStart = () => {
 
         //figure out how to keep moving forward as you roll the dice multiple times.
         if(person === "Player 1"){
+            
             if(theDice === 1){
                 rolled1++;
                 console.log("rolled = " + rolled1);
                 two.style.backgroundColor = 'yellow';
                 
-                //--------------- 1 by 1 --------------------------------------------------------------
+
                 if(two.style.backgroundColor = 'yellow' && rolled1 === 2){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'yellow';
                     
-                }else if(three.style.backgroundColor = 'yellow' && rolled1 === 3){
+                }
+                
+                if(three.style.backgroundColor = 'yellow' && rolled1 === 3){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'yellow';
                     
                 }
-                else if(four.style.backgroundColor = 'yellow' && rolled1 === 4){
+                
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 4){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'yellow';
                     
                 }
-                else if(five.style.backgroundColor = 'yellow' && rolled1 === 5){
+                
+                if(five.style.backgroundColor = 'yellow' && rolled1 === 5){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
@@ -158,7 +163,8 @@ const gameStart = () => {
                     six.style.backgroundColor = 'yellow';
                     
                 }
-                else if(six.style.backgroundColor = 'yellow' && rolled1 === 6){
+                
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 6){
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
@@ -167,7 +173,9 @@ const gameStart = () => {
                     rolled1 = 0;
                     console.log("-- LAP 1 --");
                 }
-                //--------------- 1 by 1 --------------------------------------------------------------
+
+                
+
 
                 
             }else if(theDice === 2){
@@ -188,6 +196,14 @@ const gameStart = () => {
                     rolled2 = 0;
                 }
 
+                // from 1 to 3
+                if(two.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1){
+                    console.log('from 1 to 3');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'yellow';
+                }
+
             }else if(theDice === 3){
                 rolled3++;
                 four.style.backgroundColor = 'yellow';
@@ -197,7 +213,20 @@ const gameStart = () => {
                     console.log('went threw the whole board');
                     rolled3 = 0;
                 }
+
+                if(two.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled3 === 1){
+                    console.log('from 1 to 4');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'yellow';
+                }
             }
+
+            
+
+
+
         }
         
     }
