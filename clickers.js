@@ -129,9 +129,9 @@ const gameStart = () => {
 
         /*
             Check the following combinations
-            323 - 3112 - 3111
+            3112 - 3111 - 121 - 122
         */
-       
+
         if(person === "Player 1"){
             
             if(theDice === 1){
@@ -200,6 +200,16 @@ const gameStart = () => {
                     six.style.backgroundColor = 'yellow';
                 }
 
+                // from 1 to 3 to 4 //121
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 2 && rolled2 === 1 && rolled3 === 0){
+                    console.log('from 1 to 3 to 4 - 121');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'yellow';
+                    six.style.backgroundColor = 'gray';
+                }
+
                 // PAST 5 (restart)
                 if(six.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 1){
                     console.log('PAST 5 from 321');
@@ -252,6 +262,13 @@ const gameStart = () => {
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'yellow';
                 }
+                // from 1 to 2 to 4
+                if(three.style.backgroundColor = 'yellow' && rolled1 === 2 && rolled2 === 1 && rolled3 === 0){
+                    console.log('from 1 to 3');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'yellow';
+                }
 
                 // from 3 to 5
                 if(four.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 1 && rolled3 === 1){
@@ -262,10 +279,44 @@ const gameStart = () => {
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'yellow';
                 }
+                // from 1 to 3 to 5
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 2 && rolled3 === 0){
+                    console.log('from 1 to 3 to 5 -122');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'yellow';
+                }
 
                 // from 4 through 5
                 if(five.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 1){
                     console.log('from 4 through 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+                // from 1 - 2 - 3 - 4 - through 5
+                if(five.style.backgroundColor = 'yellow' && rolled1 === 4 && rolled2 === 1 && rolled3 === 0){
+                    console.log('from 1 - 2 - 3 - 4 - through 5 / 1112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+
+                // through 5
+                if(six.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 2 && rolled3 === 1){
+                    console.log('through 5');
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
@@ -311,6 +362,18 @@ const gameStart = () => {
                 // from 3 through PAST 5 (restart)
                 if(five.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled3 === 2){
                     console.log('went threw board');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
+                }
+                // from 1 to 3 to past 5
+                if(four.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1 && rolled3 === 1){
+                    console.log('from 1 to 3 to past 5 -123');
                     two.style.backgroundColor = 'gray';
                     three.style.backgroundColor = 'gray';
                     four.style.backgroundColor = 'gray';
