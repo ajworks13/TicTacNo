@@ -82,5 +82,8 @@
     margin: 0 auto;
     margin-top: -50px;
   }
+  .theTextArea #players {
+    background-color: black;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
