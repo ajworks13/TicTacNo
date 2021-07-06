@@ -38,14 +38,55 @@ const gameStart = () => {
     let count = 0;
     let onlyOnce = 0;
 
-    let divOne = document.createElement('div');
-    divOne.style.position = 'absolute';
-    let divOneText = document.createTextNode("X");
-    divOne.appendChild(divOneText);
-    document.querySelector(".slotOne").appendChild(divOne);
+    // a new element is entered depending on which slot was chosen randomly.
+    // later make sure you add standard tic tac toe winning rules from this array.
+    const allNineBoxes = [];
+
+    // these boxes will spawn randomly inside the TicTacNo board.
+    const box_A = (exOrCircle) => {
+        let divOne = document.createElement('div');
+        divOne.style.backgroundColor = 'transparent';
+        divOne.style.fontSize = '70px';
+        divOne.style.color = 'black';
+        divOne.style.textAlign = 'center';
+        divOne.style.margin = '0 auto';
+        let divOneText;
+
+        if(exOrCircle === "Player 1"){
+            divOneText = document.createTextNode("X");
+            allNineBoxes.push(1);
+        }else if(exOrCircle === "Player 2"){
+            divOneText = document.createTextNode("O");
+        }
+
+        divOne.appendChild(divOneText);
+        document.querySelector(".slotOne").appendChild(divOne);
+    }
+
+    const box_B = (exOrCircle) => {
+        let divTwo = document.createElement('div');
+        divTwo.style.backgroundColor = 'transparent';
+        divTwo.style.fontSize = '70px';
+        divTwo.style.color = 'black';
+        divTwo.style.textAlign = 'center';
+        divTwo.style.margin = '0 auto';
+        
+        let divTwoText;
+
+        if(exOrCircle === "Player 1"){
+            divTwoText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divTwoText = document.createTextNode("O");
+        }
+
+        divTwo.appendChild(divTwoText);
+        document.querySelector(".slotTwo").appendChild(divTwo);
+    }
+
 
     const playerOne = () => {
         console.log("player 1 go!");
+        console.log(allNineBoxes);
         theTextArea.onclick = () => {
             console.log("player 1 clicked");
             count++;
@@ -78,10 +119,10 @@ const gameStart = () => {
        
 
         // set to 6.
-        let theDice = Math.floor((Math.random() * 3) + 1);
+        //let theDice = Math.floor((Math.random() * 3) + 1);
 
         //for testing
-        //let theDice = 1;
+        let theDice = 1;
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
 
@@ -89,6 +130,11 @@ const gameStart = () => {
         /*
             ====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
         */
+
+        // this checks if slotOne was taken, the random selector can NOT randomly select 1 anymore because it is taken by either player.
+        if(allNineBoxes.includes(1)){
+            console.log("WHOOOOOAAAAAA");
+        }
         
 
         if(person === "Player 1"){
@@ -144,6 +190,7 @@ const gameStart = () => {
                     six.style.backgroundColor = 'gray';
                     rolled1 = 0;
                     console.log("-- LAP 1 --");
+                    box_A(person);
                 }
 
                 if(three.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1){
