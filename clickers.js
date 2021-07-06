@@ -17,8 +17,6 @@ const gameStart = () => {
     document.getElementById("player1").innerHTML = ID_ONE;
     document.getElementById("player2").innerHTML = ID_TWO;
 
-    let slotOne = document.querySelector(".slotOne");
-
     let theTextArea = document.querySelector(".theTextArea");
 
     let numDisplay = document.querySelector(".numDisplay");
@@ -29,6 +27,8 @@ const gameStart = () => {
     let five = document.querySelector(".five");
     let six = document.querySelector(".six");
 
+    let slotOne = document.querySelector('.slotOne');
+
     let gameOver = false;
 
     let rolled1 = 0;
@@ -37,6 +37,12 @@ const gameStart = () => {
     let p1, p2;
     let count = 0;
     let onlyOnce = 0;
+
+    let divOne = document.createElement('div');
+    divOne.style.position = 'absolute';
+    let divOneText = document.createTextNode("X");
+    divOne.appendChild(divOneText);
+    document.querySelector(".slotOne").appendChild(divOne);
 
     const playerOne = () => {
         console.log("player 1 go!");
