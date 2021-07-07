@@ -40,7 +40,8 @@ const gameStart = () => {
 
     // a new element is entered depending on which slot was chosen randomly.
     // later make sure you add standard tic tac toe winning rules from this array.
-    const allNineBoxes = [];
+    const allNineBoxes = [1];
+    
 
     // these boxes will spawn randomly inside the TicTacNo board.
     const box_A = (exOrCircle) => {
@@ -85,8 +86,19 @@ const gameStart = () => {
 
 
     const playerOne = () => {
+        
+        let ticTacBoxNumbers = Math.floor((Math.random() * 3) + 1);
+        
+        // possible way to redirect a random number into another since its occupied.
+        // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        if(allNineBoxes.includes(1) && ticTacBoxNumbers === 1){
+            console.log("WHOOOOOAAAAAA");
+            ticTacBoxNumbers = 4;
+        }
+
         console.log("player 1 go!");
         console.log(allNineBoxes);
+        console.log(ticTacBoxNumbers);
         theTextArea.onclick = () => {
             console.log("player 1 clicked");
             count++;
@@ -118,7 +130,7 @@ const gameStart = () => {
     const dice = (person) => {
        
 
-        // set to 6.
+        // set to 3.
         //let theDice = Math.floor((Math.random() * 3) + 1);
 
         //for testing
@@ -130,11 +142,15 @@ const gameStart = () => {
         /*
             ====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
         */
-
+        
         // this checks if slotOne was taken, the random selector can NOT randomly select 1 anymore because it is taken by either player.
-        if(allNineBoxes.includes(1)){
-            console.log("WHOOOOOAAAAAA");
-        }
+        // if(allNineBoxes.includes(1)){
+        //     console.log("WHOOOOOAAAAAA");
+        // }
+        
+        
+           
+        
         
 
         if(person === "Player 1"){
