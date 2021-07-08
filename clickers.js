@@ -84,16 +84,29 @@ const gameStart = () => {
         document.querySelector(".slotTwo").appendChild(divTwo);
     }
 
+    const generateNums = (min, max) => {
+        return Math.floor((Math.random() * (max - min)) + min);
+    }
+
+    // use this function to select empty slots as the board gets populated.
+    Array.prototype.random = function () {
+        return this[Math.floor((Math.random()*this.length))];
+    }
+
+    let possibleNums = [2,3,4,5,6,7,8,9];
 
     const playerOne = () => {
         
         let ticTacBoxNumbers = Math.floor((Math.random() * 3) + 1);
+
+        
         
         // possible way to redirect a random number into another since its occupied.
         // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         if(allNineBoxes.includes(1) && ticTacBoxNumbers === 1){
             console.log("WHOOOOOAAAAAA");
-            ticTacBoxNumbers = 4;
+            
+            ticTacBoxNumbers = generateNums(2,9);
         }
 
         console.log("player 1 go!");
