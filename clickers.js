@@ -130,6 +130,17 @@ const gameStart = () => {
         }
     }
 
+    // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
+    const ticTacNoChecker = (thePerson, boxNumbers) =>{
+        boxNumbers = generateNums(1,2);
+        console.log("Num is " + boxNumbers);
+        if(boxNumbers === 1){
+            box_A(thePerson);
+        }else if(boxNumbers === 2){
+            box_B(thePerson);
+        }
+    }
+
     const dice = (person) => {
        
 
@@ -213,13 +224,9 @@ const gameStart = () => {
                     // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                     //start adding more boxes, fill allNineBoxes array as boxes get called.
                     // add includes when a box is already taken.
-                    ticTacBoxNumbers = generateNums(1,9);
-                    console.log("Num is " + ticTacBoxNumbers);
-                    if(ticTacBoxNumbers === 1){
-                        box_A(person);
-                    }else if(ticTacBoxNumbers === 2){
-                        box_B(person);
-                    }
+                    
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                   
 
                     // if(allNineBoxes.includes(1) && ticTacBoxNumbers === 1){
                     //     console.log("WHOOOOOAAAAAA");
