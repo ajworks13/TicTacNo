@@ -40,7 +40,7 @@ const gameStart = () => {
 
     // a new element is entered depending on which slot was chosen randomly.
     // later make sure you add standard tic tac toe winning rules from this array.
-    const allNineBoxes = [1];
+    const allNineBoxes = [];
     
 
     // these boxes will spawn randomly inside the TicTacNo board.
@@ -90,11 +90,11 @@ const gameStart = () => {
     }
 
     // use this function to select empty slots as the board gets populated.
-    Array.prototype.random = function () {
-        return this[Math.floor((Math.random()*this.length))];
-    }
+    // Array.prototype.random = function () {
+    //     return this[Math.floor((Math.random()*this.length))];
+    // }
 
-    let possibleBoardSelectors = [2,3,4,5,6,7,8,9];
+
 
     const playerOne = () => {
         
@@ -131,14 +131,46 @@ const gameStart = () => {
     }
 
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
+    // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const ticTacNoChecker = (thePerson, boxNumbers) =>{
-        boxNumbers = generateNums(1,2);
+        
+
+       // boxNumbers = generateNums(1,2);
+        if(allNineBoxes.length === 0){
+            boxNumbers = generateNums(1,2);
+        }else if(allNineBoxes.includes("one")){
+            boxNumbers = generateNums(2,3);
+            console.log("Avoiding 1");
+        }
+
         console.log("Num is " + boxNumbers);
         if(boxNumbers === 1){
             box_A(thePerson);
+            allNineBoxes.unshift("one");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
         }else if(boxNumbers === 2){
             box_B(thePerson);
+            allNineBoxes.unshift("two");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
         }
+
+       
+
+       
+
+        // if(allNineBoxes.includes(1) && ticTacBoxNumbers === 1){
+        //     console.log("WHOOOOOAAAAAA");
+        //     ticTacBoxNumbers = generateNums(1,2);
+        //     if(ticTacBoxNumbers === 1){
+        //         box_A(person);
+        //     }else if(ticTacBoxNumbers === 2){
+        //         box_B(person);
+        //     }
+        // }
     }
 
     const dice = (person) => {
@@ -149,6 +181,7 @@ const gameStart = () => {
 
         //for testing
         let theDice = 1;
+
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
 
@@ -228,15 +261,7 @@ const gameStart = () => {
                     ticTacNoChecker(person, ticTacBoxNumbers);
                    
 
-                    // if(allNineBoxes.includes(1) && ticTacBoxNumbers === 1){
-                    //     console.log("WHOOOOOAAAAAA");
-                    //     ticTacBoxNumbers = generateNums(1,9);
-                    //     if(ticTacBoxNumbers === 1){
-                    //         box_A(person);
-                    //     }else if(ticTacBoxNumbers === 2){
-                    //         box_B(person);
-                    //     }
-                    // }
+                    
                 }
 
                 if(three.style.backgroundColor = 'yellow' && rolled1 === 1 && rolled2 === 1){
