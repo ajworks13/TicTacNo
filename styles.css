@@ -82,7 +82,7 @@
     margin: 0 auto;
     margin-top: -50px;
   }
-  .theTextArea #players {
+  .theTextArea #player1, .theTextArea #player2 {
     background-color: black;
   }
 }
