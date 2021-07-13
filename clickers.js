@@ -180,7 +180,7 @@ const gameStart = () => {
             divSevenText = document.createTextNode("O");
         }
 
-        divSeven.appendChild(divSixText);
+        divSeven.appendChild(divSevenText);
         document.querySelector(".slotSeven").appendChild(divSeven);
     }
 
@@ -238,7 +238,6 @@ const gameStart = () => {
 
     const playerOne = () => {
         
-        
 
         console.log("player 1 go!");
         console.log(allNineBoxes);
@@ -281,7 +280,32 @@ const gameStart = () => {
         }else if(allNineBoxes.includes("one")){
             boxNumbers = generateNums(2,9);
             console.log("Avoiding 1");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two"))){
+            boxNumbers = generateNums(3,9);
+            console.log("Avoiding 1-2");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two"))){
+            boxNumbers = generateNums(3,9);
+            console.log("Avoiding 1-2");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three"))){
+            boxNumbers = generateNums(4,9);
+            console.log("Avoiding 1-2-3");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four"))){
+            boxNumbers = generateNums(5,9);
+            console.log("Avoiding 1-2-3-4");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four")) || (allNineBoxes.includes("five"))){
+            boxNumbers = generateNums(6,9);
+            console.log("Avoiding 1-2-3-4-5");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four")) || (allNineBoxes.includes("five")) || (allNineBoxes.includes("six"))){
+            boxNumbers = generateNums(7,9);
+            console.log("Avoiding 1-2-3-4-5-6");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four")) || (allNineBoxes.includes("five")) || (allNineBoxes.includes("six")) || (allNineBoxes.includes("seven"))){
+            boxNumbers = generateNums(8,9);
+            console.log("Avoiding 1-2-3-4-5-6-7");
+        }else if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four")) || (allNineBoxes.includes("five")) || (allNineBoxes.includes("six")) || (allNineBoxes.includes("seven")) || (allNineBoxes.includes("eight"))){
+            boxNumbers = 9;
+            console.log("Avoiding 1-2-3-4-5-6-7-8");
         }
+    
 
         console.log("Num is " + boxNumbers);
         if(boxNumbers === 1){
