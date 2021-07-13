@@ -274,6 +274,13 @@ const gameStart = () => {
     const ticTacNoChecker = (thePerson, boxNumbers) =>{
         const random246 = [2,4,6];
         const random135 = [1,3,5];
+        const random13456789 = [1,3,4,5,6,7,8,9];
+        const random12456789 = [1,2,4,5,6,7,8,9];
+        const random12356789 = [1,2,3,5,6,7,8,9];
+        const random12346789 = [1,2,3,4,6,7,8,9];
+        const random12345689 = [1,2,3,4,5,6,8,9];
+        const random12345679 = [1,2,3,4,5,6,7,9];
+        const random12345678 = [1,2,3,4,5,6,7,8];
 
        // boxNumbers = generateNums(1,2);
         if(allNineBoxes.length === 0){
@@ -305,6 +312,38 @@ const gameStart = () => {
         }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four")) && (allNineBoxes.includes("five")) && (allNineBoxes.includes("six")) && (allNineBoxes.includes("seven")) && (allNineBoxes.includes("eight"))){
             boxNumbers = 9;
             console.log("Avoiding 1-2-3-4-5-6-7-8");
+        }else if(allNineBoxes.includes("two")){
+            const r = Math.floor(Math.random() * random13456789.length);
+            boxNumbers = random13456789[r];
+            console.log("avoiding 2");
+        }else if(allNineBoxes.includes("three")){
+            const r = Math.floor(Math.random() * random12456789.length);
+            boxNumbers = random12456789[r];
+            console.log("avoiding 3");
+        }else if(allNineBoxes.includes("four")){
+            const r = Math.floor(Math.random() * random12356789.length);
+            boxNumbers = random12356789[r];
+            console.log("avoiding 4");
+        }else if(allNineBoxes.includes("five")){
+            const r = Math.floor(Math.random() * random12346789.length);
+            boxNumbers = random12346789[r];
+            console.log("avoiding 5");
+        }else if(allNineBoxes.includes("six")){
+            const r = Math.floor(Math.random() * random12345789.length);
+            boxNumbers = random12345789[r];
+            console.log("avoiding 6");
+        }else if(allNineBoxes.includes("seven")){
+            const r = Math.floor(Math.random() * random12345689.length);
+            boxNumbers = random12345689[r];
+            console.log("avoiding 7");
+        }else if(allNineBoxes.includes("eight")){
+            const r = Math.floor(Math.random() * random12345679.length);
+            boxNumbers = random12345679[r];
+            console.log("avoiding 8");
+        }else if(allNineBoxes.includes("nine")){
+            const r = Math.floor(Math.random() * random12345678.length);
+            boxNumbers = random12345678[r];
+            console.log("avoiding 9");
         }else if(allNineBoxes.includes("one") && allNineBoxes.includes("three") && allNineBoxes.includes("five")){
             const r = Math.floor(Math.random() * random246.length);
             boxNumbers = random246[r];
@@ -315,6 +354,8 @@ const gameStart = () => {
         }
     
 
+
+        // these statements push the X's or O's into the random place.
         console.log("Num is " + boxNumbers);
         if(boxNumbers === 1){
             box_A(thePerson);
