@@ -84,6 +84,146 @@ const gameStart = () => {
         document.querySelector(".slotTwo").appendChild(divTwo);
     }
 
+    const box_C = (exOrCircle) => {
+        let divThree = document.createElement('div');
+        divThree.style.backgroundColor = 'transparent';
+        divThree.style.fontSize = '70px';
+        divThree.style.color = 'black';
+        divThree.style.textAlign = 'center';
+        divThree.style.margin = '0 auto';
+        
+        let divThreeText;
+
+        if(exOrCircle === "Player 1"){
+            divThreeText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divThreeText = document.createTextNode("O");
+        }
+
+        divThree.appendChild(divThreeText);
+        document.querySelector(".slotThree").appendChild(divThree);
+    }
+
+    const box_D = (exOrCircle) => {
+        let divFour = document.createElement('div');
+        divFour.style.backgroundColor = 'transparent';
+        divFour.style.fontSize = '70px';
+        divFour.style.color = 'black';
+        divFour.style.textAlign = 'center';
+        divFour.style.margin = '0 auto';
+        
+        let divFourText;
+
+        if(exOrCircle === "Player 1"){
+            divFourText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divFourText = document.createTextNode("O");
+        }
+
+        divFour.appendChild(divFourText);
+        document.querySelector(".slotFour").appendChild(divFour);
+    }
+
+    const box_E = (exOrCircle) => {
+        let divFive = document.createElement('div');
+        divFive.style.backgroundColor = 'transparent';
+        divFive.style.fontSize = '70px';
+        divFive.style.color = 'black';
+        divFive.style.textAlign = 'center';
+        divFive.style.margin = '0 auto';
+        
+        let divFiveText;
+
+        if(exOrCircle === "Player 1"){
+            divFiveText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divFiveText = document.createTextNode("O");
+        }
+
+        divFive.appendChild(divFiveText);
+        document.querySelector(".slotFive").appendChild(divFive);
+    }
+
+    const box_F = (exOrCircle) => {
+        let divSix = document.createElement('div');
+        divSix.style.backgroundColor = 'transparent';
+        divSix.style.fontSize = '70px';
+        divSix.style.color = 'black';
+        divSix.style.textAlign = 'center';
+        divSix.style.margin = '0 auto';
+        
+        let divSixText;
+
+        if(exOrCircle === "Player 1"){
+            divSixText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divSixText = document.createTextNode("O");
+        }
+
+        divSix.appendChild(divSixText);
+        document.querySelector(".slotSix").appendChild(divSix);
+    }
+
+    const box_G = (exOrCircle) => {
+        let divSeven = document.createElement('div');
+        divSeven.style.backgroundColor = 'transparent';
+        divSeven.style.fontSize = '70px';
+        divSeven.style.color = 'black';
+        divSeven.style.textAlign = 'center';
+        divSeven.style.margin = '0 auto';
+        
+        let divSevenText;
+
+        if(exOrCircle === "Player 1"){
+            divSevenText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divSevenText = document.createTextNode("O");
+        }
+
+        divSeven.appendChild(divSixText);
+        document.querySelector(".slotSeven").appendChild(divSeven);
+    }
+
+    const box_H = (exOrCircle) => {
+        let divEight = document.createElement('div');
+        divEight.style.backgroundColor = 'transparent';
+        divEight.style.fontSize = '70px';
+        divEight.style.color = 'black';
+        divEight.style.textAlign = 'center';
+        divEight.style.margin = '0 auto';
+        
+        let divEightText;
+
+        if(exOrCircle === "Player 1"){
+            divEightText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divEightText = document.createTextNode("O");
+        }
+
+        divEight.appendChild(divEightText);
+        document.querySelector(".slotEight").appendChild(divEight);
+    }
+
+    const box_I = (exOrCircle) => {
+        let divNine = document.createElement('div');
+        divNine.style.backgroundColor = 'transparent';
+        divNine.style.fontSize = '70px';
+        divNine.style.color = 'black';
+        divNine.style.textAlign = 'center';
+        divNine.style.margin = '0 auto';
+        
+        let divNineText;
+
+        if(exOrCircle === "Player 1"){
+            divNineText = document.createTextNode("X");
+        }else if(exOrCircle === "Player 2"){
+            divNineText = document.createTextNode("O");
+        }
+
+        divNine.appendChild(divNineText);
+        document.querySelector(".slotNine").appendChild(divNine);
+    }
+
     // easier way to select a row of numbers when needed.
     const generateNums = (min, max) => {
         return Math.floor((Math.random() * (max - min)) + min);
@@ -137,22 +277,64 @@ const gameStart = () => {
 
        // boxNumbers = generateNums(1,2);
         if(allNineBoxes.length === 0){
-            boxNumbers = generateNums(1,2);
+            boxNumbers = generateNums(1,9);
         }else if(allNineBoxes.includes("one")){
-            boxNumbers = generateNums(2,3);
+            boxNumbers = generateNums(2,9);
             console.log("Avoiding 1");
         }
 
         console.log("Num is " + boxNumbers);
         if(boxNumbers === 1){
             box_A(thePerson);
-            allNineBoxes.unshift("one");
+            allNineBoxes.push("one");
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 2){
             box_B(thePerson);
-            allNineBoxes.unshift("two");
+            allNineBoxes.push("two");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 3){
+            box_C(thePerson);
+            allNineBoxes.push("three");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 4){
+            box_D(thePerson);
+            allNineBoxes.push("four");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 5){
+            box_E(thePerson);
+            allNineBoxes.push("five");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 6){
+            box_F(thePerson);
+            allNineBoxes.push("six");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 7){
+            box_G(thePerson);
+            allNineBoxes.push("seven");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 8){
+            box_H(thePerson);
+            allNineBoxes.push("eight");
+            for(let x in allNineBoxes){
+                console.log('this is from for loop: ' + allNineBoxes[x]);
+            }
+        }else if(boxNumbers === 9){
+            box_I(thePerson);
+            allNineBoxes.push("nine");
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
@@ -177,10 +359,10 @@ const gameStart = () => {
        
 
         // set to 3.
-        //let theDice = Math.floor((Math.random() * 3) + 1);
+        let theDice = Math.floor((Math.random() * 3) + 1);
 
         //for testing
-        let theDice = 1;
+        //let theDice = 1;
 
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
@@ -196,8 +378,8 @@ const gameStart = () => {
         // }
         
         
-           
-        let ticTacBoxNumbers = Math.floor((Math.random() * 3) + 1);
+        // set to 9 to choose a random Tic Tac No box.
+        let ticTacBoxNumbers = Math.floor((Math.random() * 9) + 1);
         console.log(ticTacBoxNumbers);
 
         if(person === "Player 1"){
@@ -287,6 +469,10 @@ const gameStart = () => {
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
                     console.log("from 2 to 4 to 5 to past 5 / 2211");
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled1 = 0;
+                    rolled2 = 0;
+                    rolled3 = 0;
                 }
 
                 
@@ -335,6 +521,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -348,6 +535,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -361,6 +549,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -373,6 +562,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -397,6 +587,7 @@ const gameStart = () => {
                     three.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     console.log('went threw the whole board');
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -461,6 +652,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -473,6 +665,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -486,6 +679,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -498,6 +692,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -510,6 +705,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -523,6 +719,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -536,6 +733,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -549,6 +747,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -561,6 +760,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -573,6 +773,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -587,6 +788,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -599,6 +801,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -614,6 +817,9 @@ const gameStart = () => {
                 if(four.style.backgroundColor = 'yellow' && rolled1 === 0 && rolled2 === 0 && rolled3 === 2){
                     four.style.backgroundColor = 'gray';
                     console.log('went threw the whole board');
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled1 = 0;
+                    rolled2 = 0;
                     rolled3 = 0;
                 }
 
@@ -650,6 +856,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -663,6 +870,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -675,6 +883,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -687,6 +896,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -699,6 +909,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -711,6 +922,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -724,6 +936,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -736,6 +949,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -747,6 +961,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -758,6 +973,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
@@ -771,6 +987,7 @@ const gameStart = () => {
                     four.style.backgroundColor = 'gray';
                     five.style.backgroundColor = 'gray';
                     six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
                     rolled1 = 0;
                     rolled2 = 0;
                     rolled3 = 0;
