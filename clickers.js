@@ -229,6 +229,10 @@ const gameStart = () => {
         return Math.floor((Math.random() * (max - min)) + min);
     }
 
+    const generateNums2 = () => {
+        return Math.floor((Math.random() * 9) + 1);
+    }
+
     // use this function to select empty slots as the board gets populated.
     // Array.prototype.random = function () {
     //     return this[Math.floor((Math.random()*this.length))];
@@ -292,11 +296,19 @@ const gameStart = () => {
         // const random12345678 = [1,2,3,4,5,6,7,8];
 
         
-        
-        if(allNineBoxes.includes("one") || (allNineBoxes.includes("two")) || (allNineBoxes.includes("three")) || (allNineBoxes.includes("four")) || (allNineBoxes.includes("five")) || (allNineBoxes.includes("six")) || (allNineBoxes.includes("seven")) || (allNineBoxes.includes("eight"))){
-            console.log("AVOIDING");
-            boxNumbers = generateNums(1,9);
+        const letsRanomize = (tempArr) =>{
+            const theRandomNumberFromGenerator = generateNums2();
+            if(tempArr.includes(theRandomNumberFromGenerator)){
+                console.log("NUMBER EXIST " + theRandomNumberFromGenerator);
+                return letsRanomize(tempArr);
+            }
+            allNineBoxes.push(theRandomNumberFromGenerator);
+            console.log('pushing..');
+            boxNumbers = theRandomNumberFromGenerator;
+            
         }
+        letsRanomize(allNineBoxes);
+        
 
        // boxNumbers = generateNums(1,2);
         // if(allNineBoxes.length === 0){
@@ -431,55 +443,55 @@ const gameStart = () => {
         console.log("Num is " + boxNumbers);
         if(boxNumbers === 1){
             box_A(thePerson);
-            allNineBoxes.push("one");
+            allNineBoxes.push(1);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 2){
             box_B(thePerson);
-            allNineBoxes.push("two");
+            allNineBoxes.push(2);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 3){
             box_C(thePerson);
-            allNineBoxes.push("three");
+            allNineBoxes.push(3);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 4){
             box_D(thePerson);
-            allNineBoxes.push("four");
+            allNineBoxes.push(4);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 5){
             box_E(thePerson);
-            allNineBoxes.push("five");
+            allNineBoxes.push(5);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 6){
             box_F(thePerson);
-            allNineBoxes.push("six");
+            allNineBoxes.push(6);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 7){
             box_G(thePerson);
-            allNineBoxes.push("seven");
+            allNineBoxes.push(7);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 8){
             box_H(thePerson);
-            allNineBoxes.push("eight");
+            allNineBoxes.push(8);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }else if(boxNumbers === 9){
             box_I(thePerson);
-            allNineBoxes.push("nine");
+            allNineBoxes.push(9);
             for(let x in allNineBoxes){
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
