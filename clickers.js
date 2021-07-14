@@ -296,13 +296,14 @@ const gameStart = () => {
         // const random12345678 = [1,2,3,4,5,6,7,8];
 
         
+        // This function makes sure that the numbers are NOT repeated. If a repeated number comes in, the function reruns until a new number is found.
         const letsRanomize = (tempArr) =>{
             const theRandomNumberFromGenerator = generateNums2();
             if(tempArr.includes(theRandomNumberFromGenerator)){
                 console.log("NUMBER EXIST " + theRandomNumberFromGenerator);
                 return letsRanomize(tempArr);
             }
-            allNineBoxes.push(theRandomNumberFromGenerator);
+           // allNineBoxes.push(theRandomNumberFromGenerator);
             console.log('pushing..');
             boxNumbers = theRandomNumberFromGenerator;
             
