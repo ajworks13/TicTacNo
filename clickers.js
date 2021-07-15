@@ -34,6 +34,11 @@ const gameStart = () => {
     let rolled1 = 0;
     let rolled2 = 0;
     let rolled3 = 0;
+
+    let rolled21 = 0;
+    let rolled22 = 0;
+    let rolled23 = 0;
+
     let p1, p2;
     let count = 0;
     let onlyOnce = 0;
@@ -55,7 +60,7 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
-            allNineBoxes.push(1);
+           // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
         }
@@ -274,7 +279,6 @@ const gameStart = () => {
     }
 
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
-    // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const ticTacNoChecker = (thePerson, boxNumbers) =>{
         // const random15 = [1,5];
         // const random67 = [6,7];
@@ -299,11 +303,12 @@ const gameStart = () => {
         // This function makes sure that the numbers are NOT repeated. If a repeated number comes in, the function reruns until a new number is found.
         const letsRanomize = (tempArr) =>{
             const theRandomNumberFromGenerator = generateNums2();
+
             if(tempArr.includes(theRandomNumberFromGenerator)){
                 console.log("NUMBER EXIST " + theRandomNumberFromGenerator);
                 return letsRanomize(tempArr);
             }
-           // allNineBoxes.push(theRandomNumberFromGenerator);
+
             console.log('pushing..');
             boxNumbers = theRandomNumberFromGenerator;
             
@@ -517,7 +522,7 @@ const gameStart = () => {
        
 
         // set to 3.
-        let theDice = Math.floor((Math.random() * 3) + 1);
+        let theDice = Math.floor((Math.random() * 1) + 1);
 
         //for testing
         //let theDice = 1;
@@ -534,11 +539,18 @@ const gameStart = () => {
         // if(allNineBoxes.includes(1)){
         //     console.log("WHOOOOOAAAAAA");
         // }
+
+        /*
+        GRADIENT IN JS
+            document.body.style.backgroundImage = 'linear-gradient(to right,' + "red" + " , " + "yellow" +')';
+        */
         
         
         // set to 9 to choose a random Tic Tac No box.
         let ticTacBoxNumbers = Math.floor((Math.random() * 9) + 1);
         console.log(ticTacBoxNumbers);
+
+        
 
         if(person === "Player 1"){
             
@@ -1167,7 +1179,635 @@ const gameStart = () => {
 
             /*
             ====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             */
+           // LEFT OFF HERE:
+           // Change all rolled1 - rolled2 - rolled3      into      rolled21 - rolled22 - rolled23
+        }else if(person === "Player 2"){
+            if(theDice === 1){
+                rolled21++;
+                onlyOnce++;
+                // if player lands on the highlighted platform, you will go twice at once in the 'tic tac no' board.
+                if(randomPowerSpawn === 1 && onlyOnce === 1){
+                    onlyOnce++;
+                    console.log("POWER UP!");
+                }
+
+
+                console.log("rolled = " + rolled1);
+                two.style.backgroundColor = 'cyan';
+                
+
+                if(two.style.backgroundColor = 'cyan' && rolled21 === 2){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'cyan';
+                    
+                }
+                
+                if(three.style.backgroundColor = 'cyan' && rolled21 === 3){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'cyan';
+                    
+                }
+                
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 4){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                    
+                }
+                
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 5){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                    
+                }
+                
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 6){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    rolled21 = 0;
+                    console.log("-- LAP 1 --");
+
+                    //start adding more boxes, fill allNineBoxes array as boxes get called.
+                    // add includes when a box is already taken.
+                    
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                   
+
+                    
+                }
+
+                if(three.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'cyan';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 2 && rolled23 === 0){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 2 && rolled23 === 0){
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    console.log("from 2 to 4 to 5 to past 5 / 2211");
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                
+                // from 3 to 4
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled23 === 1){
+                    console.log('from 3 to 4');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                }
+
+                // from 4 to 5
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 0 && rolled23 === 1){
+                    console.log('from 4 to 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                // from 1 to 3 to 4 //121
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3 to 4 - 121');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                    six.style.backgroundColor = 'gray';
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3 to 4 - 1211');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 4 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3 to 4 to 5 to past 5 - 12111');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1 && rolled23 === 1){
+                    console.log('PAST 5 from 321');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 0 && rolled23 === 1){
+                    console.log('PAST 5 from 3111');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1 && rolled23 === 1){
+                    console.log('PAST 5 from 231');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+            /*
+            ====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+            */
+                
+            }else if(theDice === 2){
+                rolled22++;
+                
+                // two.style.backgroundColor = 'gray';
+                three.style.backgroundColor = 'cyan';
+               
+                if(three.style.backgroundColor = 'cyan' && rolled22 === 2){
+                    three.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 3 && rolled23 === 0){
+                    three.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    console.log('went threw the whole board');
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // from 1 to 3
+                if(two.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'cyan';
+                }
+                // from 1 to 2 to 4
+                if(three.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                }
+
+                // from 3 to 5
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 1 && rolled23 === 1){
+                    console.log('from 3 to 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+                // from 1 to 3 to 5
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 2 && rolled23 === 0){
+                    console.log('from 1 to 3 to 5 -122');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 2 to 3 to 5 -1112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 2 && rolled23 === 0){
+                    console.log('from 2 to 3 to 5 -212');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 3 && rolled23 === 0){
+                    console.log('from 1 to 3 to 5 -1222');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 to 3 to 4 to 5 to past 5 -12112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // from 4 through 5
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1 && rolled23 === 1){
+                    console.log('from 4 through 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                // from 1 to 3 to 4 to past 5
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 2 && rolled23 === 0){
+                    console.log('from 1 to 3 to 4 to past 5 / 1212');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 2 && rolled23 === 0){
+                    console.log('from 2 to 3 to 4 to 5 to past 5 / 21112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 2 && rolled23 === 1){
+                    console.log('PAST 5 from 232');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // from 1 - 2 - 3 - 4 - through 5
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 4 && rolled22 === 1 && rolled23 === 0){
+                    console.log('from 1 - 2 - 3 - 4 - through 5 / 1112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // through 5
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 2 && rolled23 === 1){
+                    console.log('through 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 3 && rolled23 === 0){
+                    console.log('through 5 / 2212');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 3 && rolled23 === 0){
+                    console.log('through 5 / 1222');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 1 && rolled23 === 1){
+                    console.log('PAST 5 from 3112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 5 && rolled22 === 1 && rolled23 === 0){
+                    console.log('PAST 5 from 111112');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                /*
+                ====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+                */
+
+            }else if(theDice === 3){
+                rolled23++;
+                four.style.backgroundColor = 'cyan';
+
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 0 && rolled23 === 2){
+                    four.style.backgroundColor = 'gray';
+                    console.log('went threw the whole board');
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(two.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled23 === 1){
+                    console.log('from 1 to 4');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'cyan';
+                }
+
+                if(three.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 0 && rolled23 === 1){
+                    console.log('113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(three.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 1 && rolled23 === 1){
+                    console.log('23');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'cyan';
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 0 && rolled23 === 2){
+                    console.log('1133 past 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // from 3 through PAST 5 (restart)
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled23 === 2){
+                    console.log('went threw board');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                // from 1 to 3 to past 5
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 1 && rolled23 === 1){
+                    console.log('from 1 to 3 to past 5 -123');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 1 && rolled22 === 2 && rolled23 === 1){
+                    console.log('from 1 to 3 to 5 to past 5 -2123');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 1 && rolled23 === 1){
+                    console.log('from 1 to 3 to past 5 -1123');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 2 && rolled23 === 1){
+                    console.log('from 1 to 3 to past 5 -223');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 0 && rolled22 === 1 && rolled23 === 2){
+                    console.log('PAST 5');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 5 && rolled22 === 0 && rolled23 === 1){
+                    console.log('PAST 5 / 111113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                if(five.style.backgroundColor = 'cyan' && rolled21 === 4 && rolled22 === 0 && rolled23 === 1){
+                    console.log('PAST 5 / 11113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 1 && rolled23 === 1){
+                    console.log('PAST 5 / 12113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+                if(four.style.backgroundColor = 'cyan' && rolled21 === 3 && rolled22 === 0 && rolled23 === 1){
+                    console.log('PAST 5 / 1113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+
+                // PAST 5 (restart)
+                if(six.style.backgroundColor = 'cyan' && rolled21 === 2 && rolled22 === 0 && rolled23 === 2){
+                    console.log('PAST 5 from 3113');
+                    two.style.backgroundColor = 'gray';
+                    three.style.backgroundColor = 'gray';
+                    four.style.backgroundColor = 'gray';
+                    five.style.backgroundColor = 'gray';
+                    six.style.backgroundColor = 'gray';
+                    ticTacNoChecker(person, ticTacBoxNumbers);
+                    rolled21 = 0;
+                    rolled22 = 0;
+                    rolled23 = 0;
+                }
+            }
         }
         
     }
