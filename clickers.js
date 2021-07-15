@@ -522,7 +522,7 @@ const gameStart = () => {
        
 
         // set to 3.
-        let theDice = Math.floor((Math.random() * 1) + 1);
+        let theDice = Math.floor((Math.random() * 3) + 1);
 
         //for testing
         //let theDice = 1;
@@ -542,7 +542,7 @@ const gameStart = () => {
 
         /*
         GRADIENT IN JS
-            document.body.style.backgroundImage = 'linear-gradient(to right,' + "red" + " , " + "yellow" +')';
+            document.body.style.backgroundImage = 'linear-gradient(to right,' + "red 50%" + " , " + "yellow" +')';
         */
         
         
