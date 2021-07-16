@@ -30,6 +30,28 @@
     margin-top: 5px;
     border: 1px solid black;
   }
+  .topBar2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 85%;
+    height: 30px;
+    background-color: wheat;
+  }
+  .topBar2 .twoOne, .topBar2 .twoTwo, .topBar2 .twoThree, .topBar2 .twoFour, .topBar2 .twoFive, .topBar2 .twoSix {
+    background-color: #777777;
+    width: 15px;
+    height: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 5px;
+    border: 1px solid black;
+  }
   .ticTacToeBoard {
     display: -webkit-box;
     display: -ms-flexbox;
