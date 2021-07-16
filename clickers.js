@@ -21,12 +21,14 @@ const gameStart = () => {
 
     let numDisplay = document.querySelector(".numDisplay");
 
+    // for player 1
     let two = document.querySelector(".two");
     let three = document.querySelector(".three");
     let four = document.querySelector(".four");
     let five = document.querySelector(".five");
     let six = document.querySelector(".six");
 
+    // for player 2
     let twoTwo = document.querySelector(".twoTwo");
     let twoThree = document.querySelector(".twoThree");
     let twoFour = document.querySelector(".twoFour");
@@ -34,6 +36,14 @@ const gameStart = () => {
     let twoSix = document.querySelector(".twoSix");
 
     let slotOne = document.querySelector('.slotOne');
+    let slotTwo = document.querySelector('.slotTwo');
+    let slotThree = document.querySelector('.slotThree');
+    let slotFour = document.querySelector('.slotFour');
+    let slotFive = document.querySelector('.slotFive');
+    let slotSix = document.querySelector('.slotSix');
+    let slotSeven = document.querySelector('.slotSeven');
+    let slotEight = document.querySelector('.slotEight');
+    let slotNine = document.querySelector('.slotNine');
 
     let gameOver = false;
 
@@ -238,9 +248,9 @@ const gameStart = () => {
     }
 
     // easier way to select a row of numbers when needed.
-    const generateNums = (min, max) => {
-        return Math.floor((Math.random() * (max - min)) + min);
-    }
+    // const generateNums = (min, max) => {
+    //     return Math.floor((Math.random() * (max - min)) + min);
+    // }
 
     const generateNums2 = () => {
         return Math.floor((Math.random() * 9) + 1);
@@ -254,6 +264,7 @@ const gameStart = () => {
 
 
     const playerOne = () => {
+        detectWinner();
         console.log("player 1 go!");
         console.log(allNineBoxes);
         theTextArea.onclick = () => {
@@ -270,6 +281,7 @@ const gameStart = () => {
     }
 
     const playerTwo = () => {
+        detectWinner();
         console.log("player 2 go!");
         theTextArea.onclick = () => {
             console.log("player 2 clicked");
@@ -281,6 +293,14 @@ const gameStart = () => {
                 count = 0;
                 p1 = setInterval(playerOne, 1000);
             }
+        }
+    }
+
+    // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    const detectWinner = () => {
+        if(slotOne.value === "X" || slotOne.value === "O"){
+            console.log("SPOTTED");
         }
     }
 
@@ -1841,10 +1861,8 @@ const gameStart = () => {
 
     powerSelector();
     
+    
 
-    slotOne.onclick = function(){
-        console.log("clicked");
-    }
     //starts it off.
     p1 = setInterval(playerOne, 1000);
     
