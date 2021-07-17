@@ -45,6 +45,16 @@ const gameStart = () => {
     let slotEight = document.querySelector('.slotEight');
     let slotNine = document.querySelector('.slotNine');
 
+    let divOneText, 
+        divTwoText, 
+        divThreeText, 
+        divFourText, 
+        divFiveText,
+        divSixText, 
+        divSevenText, 
+        divEightText, 
+        divNineText;
+
     let gameOver = false;
 
     // for player 1
@@ -68,13 +78,14 @@ const gameStart = () => {
 
     // these boxes will spawn randomly inside the TicTacNo board.
     const box_A = (exOrCircle) => {
+
         let divOne = document.createElement('div');
         divOne.style.backgroundColor = 'transparent';
         divOne.style.fontSize = '70px';
         divOne.style.color = 'black';
         divOne.style.textAlign = 'center';
         divOne.style.margin = '0 auto';
-        let divOneText;
+        
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
@@ -95,7 +106,7 @@ const gameStart = () => {
         divTwo.style.textAlign = 'center';
         divTwo.style.margin = '0 auto';
         
-        let divTwoText;
+        
 
         if(exOrCircle === "Player 1"){
             divTwoText = document.createTextNode("X");
@@ -115,7 +126,7 @@ const gameStart = () => {
         divThree.style.textAlign = 'center';
         divThree.style.margin = '0 auto';
         
-        let divThreeText;
+        
 
         if(exOrCircle === "Player 1"){
             divThreeText = document.createTextNode("X");
@@ -135,7 +146,7 @@ const gameStart = () => {
         divFour.style.textAlign = 'center';
         divFour.style.margin = '0 auto';
         
-        let divFourText;
+        
 
         if(exOrCircle === "Player 1"){
             divFourText = document.createTextNode("X");
@@ -155,7 +166,7 @@ const gameStart = () => {
         divFive.style.textAlign = 'center';
         divFive.style.margin = '0 auto';
         
-        let divFiveText;
+        
 
         if(exOrCircle === "Player 1"){
             divFiveText = document.createTextNode("X");
@@ -175,7 +186,7 @@ const gameStart = () => {
         divSix.style.textAlign = 'center';
         divSix.style.margin = '0 auto';
         
-        let divSixText;
+        
 
         if(exOrCircle === "Player 1"){
             divSixText = document.createTextNode("X");
@@ -195,7 +206,7 @@ const gameStart = () => {
         divSeven.style.textAlign = 'center';
         divSeven.style.margin = '0 auto';
         
-        let divSevenText;
+        
 
         if(exOrCircle === "Player 1"){
             divSevenText = document.createTextNode("X");
@@ -215,7 +226,7 @@ const gameStart = () => {
         divEight.style.textAlign = 'center';
         divEight.style.margin = '0 auto';
         
-        let divEightText;
+        
 
         if(exOrCircle === "Player 1"){
             divEightText = document.createTextNode("X");
@@ -235,7 +246,7 @@ const gameStart = () => {
         divNine.style.textAlign = 'center';
         divNine.style.margin = '0 auto';
         
-        let divNineText;
+        
 
         if(exOrCircle === "Player 1"){
             divNineText = document.createTextNode("X");
@@ -261,10 +272,10 @@ const gameStart = () => {
     //     return this[Math.floor((Math.random()*this.length))];
     // }
 
-
+    
 
     const playerOne = () => {
-        detectWinner();
+        
         console.log("player 1 go!");
         console.log(allNineBoxes);
         theTextArea.onclick = () => {
@@ -281,7 +292,7 @@ const gameStart = () => {
     }
 
     const playerTwo = () => {
-        detectWinner();
+        
         console.log("player 2 go!");
         theTextArea.onclick = () => {
             console.log("player 2 clicked");
@@ -298,14 +309,13 @@ const gameStart = () => {
 
     // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    const detectWinner = () => {
-        if(slotOne.value === "X" || slotOne.value === "O"){
-            console.log("SPOTTED");
-        }
-    }
-
+    
+    
+    
+    
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
     const ticTacNoChecker = (thePerson, boxNumbers) =>{
+        
         // const random15 = [1,5];
         // const random67 = [6,7];
         // const random147 = [1,4,7];
@@ -543,9 +553,12 @@ const gameStart = () => {
         //     }
         // }
     }
+    if(document.querySelector(".slotOne").value === "X" || document.querySelector(".slotOne").value === "O"){
+        console.log("THERE IT IS");
+    }
 
     const dice = (person) => {
-       
+        
 
         // set to 3.
         let theDice = Math.floor((Math.random() * 3) + 1);
