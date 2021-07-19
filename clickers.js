@@ -78,6 +78,8 @@ const gameStart = () => {
     
 
     // these boxes will spawn randomly inside the TicTacNo board.
+
+    
     
     const box_A = (exOrCircle) => {
 
@@ -280,7 +282,7 @@ const gameStart = () => {
     }
 
     const playerOne = () => {
-        console.log("THIS IS DIV ONE: " + divOneText.value);
+        console.log("THIS IS DIV ONE: " + slotOne.value);
         console.log("player 1 go!");
         console.log(allNineBoxes);
         theTextArea.onclick = () => {
@@ -314,6 +316,44 @@ const gameStart = () => {
 
     // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+    /*
+               POSSIBLE FORMULA
+
+
+                                                let list = [];
+                                                const letters = (...letts) => {
+                                                
+                                                list.push(letts);
+                                                
+                                                for(lists of list){
+                                                    console.log(list);
+                                                }
+                                                
+                                                //console.log(list);
+                                                if(list.length === 3){
+                                                    console.log("winner");
+                                                }
+                                                
+                                                }
+
+                                                const apple = () =>{
+                                                let one = '1';
+                                                letters(one)
+                                                }
+                                                const orange = () =>{
+                                                let two = "2";
+                                                letters(two);
+                                                }
+                                                const grape = () =>{
+                                                let three = "3";
+                                                letters(three);
+                                                }
+
+                                                apple();
+                                                orange();
+                                                grape();
+
+    */
     
     if(divOneText === "X"){
         console.log("THERE IT IS");
