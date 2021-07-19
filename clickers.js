@@ -45,7 +45,8 @@ const gameStart = () => {
     let slotEight = document.querySelector('.slotEight');
     let slotNine = document.querySelector('.slotNine');
 
-    let divOneText, 
+    let divOneText = "";
+    let  
         divTwoText, 
         divThreeText, 
         divFourText, 
@@ -77,6 +78,7 @@ const gameStart = () => {
     
 
     // these boxes will spawn randomly inside the TicTacNo board.
+    
     const box_A = (exOrCircle) => {
 
         let divOne = document.createElement('div');
@@ -272,10 +274,13 @@ const gameStart = () => {
     //     return this[Math.floor((Math.random()*this.length))];
     // }
 
-    
+
+    if(divOneText.innerHTML === "X" || divOneText.innerHTML === "O"){
+        console.log("SPOTTED");
+    }
 
     const playerOne = () => {
-        
+        console.log("THIS IS DIV ONE: " + divOneText.value);
         console.log("player 1 go!");
         console.log(allNineBoxes);
         theTextArea.onclick = () => {
@@ -310,7 +315,12 @@ const gameStart = () => {
     // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     
-    
+    if(divOneText === "X"){
+        console.log("THERE IT IS");
+    }
+    if(divTwoText === "O"){
+        console.log("THERE IT IS");
+    }
     
     
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
@@ -553,9 +563,7 @@ const gameStart = () => {
         //     }
         // }
     }
-    if(document.querySelector(".slotOne").value === "X" || document.querySelector(".slotOne").value === "O"){
-        console.log("THERE IT IS");
-    }
+
 
     const dice = (person) => {
         
@@ -568,6 +576,8 @@ const gameStart = () => {
 
         console.log(`${person} rolled for number: ${theDice}`);
         numDisplay.innerHTML = `${person} rolled: (${theDice})`;
+
+        
 
         
         /*
@@ -1879,7 +1889,9 @@ const gameStart = () => {
     //starts it off.
     p1 = setInterval(playerOne, 1000);
     
+    // divOneText = "X";
 
+    
 
 }
 
