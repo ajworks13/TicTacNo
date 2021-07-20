@@ -45,8 +45,8 @@ const gameStart = () => {
     let slotEight = document.querySelector('.slotEight');
     let slotNine = document.querySelector('.slotNine');
 
-    let divOneText = "";
-    let  
+    
+    let divOneText,
         divTwoText, 
         divThreeText, 
         divFourText, 
@@ -75,11 +75,44 @@ const gameStart = () => {
     // a new element is entered depending on which slot was chosen randomly.
     // later make sure you add standard tic tac toe winning rules from this array.
     const allNineBoxes = [];
+    const winnerABC = [];
+    const winnerDFG = [];
+    const winnerHIJ = [];
+
+    const theWinner = (...letters) => {
+        winnerABC.push(letters);
+        winnerDFG.push(letters);
+        
+        for(let letter of winnerABC){
+            console.log(letter);
+        }
+
+        
+
+       
+        if(winnerABC[0] === "X" && winnerABC[1] === "X" && winnerABC[2] === "X"){
+            console.log("Won by X's");
+        }
+    
+    
+        if(winnerDFG[0] === "X" && winnerDFG[1] === "X" && winnerDFG[2] === "X"){
+            console.log("Won by X's");
+        }
+        
+    
+
+    
+        if(winnerHIJ[0] === "X" && winnerHIJ[1] === "X" && winnerHIJ[2] === "X"){
+            console.log("Won by X's");
+        }
+        
+
+
+    }
     
 
     // these boxes will spawn randomly inside the TicTacNo board.
-
-    
+  
     
     const box_A = (exOrCircle) => {
 
@@ -93,9 +126,11 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
+            theWinner(divOneText.nodeValue);
            // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
+            theWinner(divOneText.nodeValue);
         }
 
         divOne.appendChild(divOneText);
@@ -114,8 +149,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divTwoText = document.createTextNode("X");
+            theWinner(divTwoText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divTwoText = document.createTextNode("O");
+            theWinner(divTwoText.nodeValue);
         }
 
         divTwo.appendChild(divTwoText);
@@ -134,8 +171,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divThreeText = document.createTextNode("X");
+            theWinner(divThreeText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divThreeText = document.createTextNode("O");
+            theWinner(divThreeText.nodeValue);
         }
 
         divThree.appendChild(divThreeText);
@@ -154,8 +193,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFourText = document.createTextNode("X");
+            theWinner(divFourText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divFourText = document.createTextNode("O");
+            theWinner(divFourText.nodeValue);
         }
 
         divFour.appendChild(divFourText);
@@ -174,8 +215,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFiveText = document.createTextNode("X");
+            theWinner(divFiveText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divFiveText = document.createTextNode("O");
+            theWinner(divFiveText.nodeValue);
         }
 
         divFive.appendChild(divFiveText);
@@ -194,8 +237,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSixText = document.createTextNode("X");
+            theWinner(divSixText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divSixText = document.createTextNode("O");
+            theWinner(divSixText.nodeValue);
         }
 
         divSix.appendChild(divSixText);
@@ -214,8 +259,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSevenText = document.createTextNode("X");
+            theWinner(divSevenText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divSevenText = document.createTextNode("O");
+            theWinner(divSevenText.nodeValue);
         }
 
         divSeven.appendChild(divSevenText);
@@ -234,8 +281,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divEightText = document.createTextNode("X");
+            theWinner(divEightText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divEightText = document.createTextNode("O");
+            theWinner(divEightText.nodeValue);
         }
 
         divEight.appendChild(divEightText);
@@ -254,8 +303,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divNineText = document.createTextNode("X");
+            theWinner(divNineText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divNineText = document.createTextNode("O");
+            theWinner(divNineText.nodeValue);
         }
 
         divNine.appendChild(divNineText);
@@ -277,12 +328,10 @@ const gameStart = () => {
     // }
 
 
-    if(divOneText.innerHTML === "X" || divOneText.innerHTML === "O"){
-        console.log("SPOTTED");
-    }
+    
 
     const playerOne = () => {
-        console.log("THIS IS DIV ONE: " + slotOne.value);
+        
         console.log("player 1 go!");
         console.log(allNineBoxes);
         theTextArea.onclick = () => {
@@ -315,7 +364,7 @@ const gameStart = () => {
     }
 
     // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
+    // 7/19
     /*
                POSSIBLE FORMULA
 
@@ -355,12 +404,7 @@ const gameStart = () => {
 
     */
     
-    if(divOneText === "X"){
-        console.log("THERE IT IS");
-    }
-    if(divTwoText === "O"){
-        console.log("THERE IT IS");
-    }
+   
     
     
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
