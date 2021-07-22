@@ -77,35 +77,39 @@ const gameStart = () => {
 
 
     // LEFT OFF HERE +++++++++++++++++++++++++++++++++++++
-    // maybe have individual functions for each winning pattern.
+    // use multiudimentional array?
     const allNineBoxes = [];
-    const winnerABC = [];
+    const winner = [
+        [],
+        [],
+        []
+    ];
     const winnerDFG = [];
     const winnerHIJ = [];
 
-    const theWinnerABC = (...letters) => {
-        winnerABC.push(letters);
+    const theWinnerABC = () => {
         
-        for(let letter of winnerABC){
+        
+        for(let letter of winner){
             console.log(letter);
         }
 
         
 
        
-        if(winnerABC[0] === "X" && winnerABC[1] === "X" && winnerABC[2] === "X"){
+        if(winner[0][0] === "X" && winner[0][1] === "X" && winner[0][2] === "X"){
             console.log("Won by X's");
         }
     
     
-        if(winnerABC[3] === "X" && winnerABC[4] === "X" && winnerABC[5] === "X"){
+        if(winner[1][0] === "X" && winner[1][1] === "X" && winner[1][2] === "X"){
             console.log("Won by X's");
         }
         
     
 
     
-        if(winnerABC[6] === "X" && winnerABC[7] === "X" && winnerABC[8] === "X"){
+        if(winner[2][0] === "X" && winner[2][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
         }
         
@@ -129,11 +133,13 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
-            theWinnerABC(divOneText.nodeValue);
+            winner[0].push(divOneText.nodeValue);
+            winnerABC();
            // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
-            theWinnerABC(divOneText.nodeValue);
+            winner[0].push(divOneText.nodeValue);
+            winnerABC();
         }
 
         divOne.appendChild(divOneText);
