@@ -74,14 +74,17 @@ const gameStart = () => {
 
     // a new element is entered depending on which slot was chosen randomly.
     // later make sure you add standard tic tac toe winning rules from this array.
+
+
+    // LEFT OFF HERE +++++++++++++++++++++++++++++++++++++
+    // maybe have individual functions for each winning pattern.
     const allNineBoxes = [];
     const winnerABC = [];
     const winnerDFG = [];
     const winnerHIJ = [];
 
-    const theWinner = (...letters) => {
+    const theWinnerABC = (...letters) => {
         winnerABC.push(letters);
-        winnerDFG.push(letters);
         
         for(let letter of winnerABC){
             console.log(letter);
@@ -95,14 +98,14 @@ const gameStart = () => {
         }
     
     
-        if(winnerDFG[0] === "X" && winnerDFG[1] === "X" && winnerDFG[2] === "X"){
+        if(winnerABC[3] === "X" && winnerABC[4] === "X" && winnerABC[5] === "X"){
             console.log("Won by X's");
         }
         
     
 
     
-        if(winnerHIJ[0] === "X" && winnerHIJ[1] === "X" && winnerHIJ[2] === "X"){
+        if(winnerABC[6] === "X" && winnerABC[7] === "X" && winnerABC[8] === "X"){
             console.log("Won by X's");
         }
         
@@ -126,11 +129,11 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
-            theWinner(divOneText.nodeValue);
+            theWinnerABC(divOneText.nodeValue);
            // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
-            theWinner(divOneText.nodeValue);
+            theWinnerABC(divOneText.nodeValue);
         }
 
         divOne.appendChild(divOneText);
@@ -149,10 +152,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divTwoText = document.createTextNode("X");
-            theWinner(divTwoText.nodeValue);
+            theWinnerABC(divTwoText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divTwoText = document.createTextNode("O");
-            theWinner(divTwoText.nodeValue);
+            theWinnerABC(divTwoText.nodeValue);
         }
 
         divTwo.appendChild(divTwoText);
@@ -171,10 +174,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divThreeText = document.createTextNode("X");
-            theWinner(divThreeText.nodeValue);
+            theWinnerABC(divThreeText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divThreeText = document.createTextNode("O");
-            theWinner(divThreeText.nodeValue);
+            theWinnerABC(divThreeText.nodeValue);
         }
 
         divThree.appendChild(divThreeText);
@@ -193,10 +196,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFourText = document.createTextNode("X");
-            theWinner(divFourText.nodeValue);
+            theWinnerABC(divFourText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divFourText = document.createTextNode("O");
-            theWinner(divFourText.nodeValue);
+            theWinnerABC(divFourText.nodeValue);
         }
 
         divFour.appendChild(divFourText);
@@ -215,10 +218,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFiveText = document.createTextNode("X");
-            theWinner(divFiveText.nodeValue);
+            theWinnerABC(divFiveText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divFiveText = document.createTextNode("O");
-            theWinner(divFiveText.nodeValue);
+            theWinnerABC(divFiveText.nodeValue);
         }
 
         divFive.appendChild(divFiveText);
@@ -237,10 +240,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSixText = document.createTextNode("X");
-            theWinner(divSixText.nodeValue);
+            theWinnerABC(divSixText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divSixText = document.createTextNode("O");
-            theWinner(divSixText.nodeValue);
+            theWinnerABC(divSixText.nodeValue);
         }
 
         divSix.appendChild(divSixText);
@@ -259,10 +262,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSevenText = document.createTextNode("X");
-            theWinner(divSevenText.nodeValue);
+            theWinnerABC(divSevenText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divSevenText = document.createTextNode("O");
-            theWinner(divSevenText.nodeValue);
+            theWinnerABC(divSevenText.nodeValue);
         }
 
         divSeven.appendChild(divSevenText);
@@ -281,10 +284,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divEightText = document.createTextNode("X");
-            theWinner(divEightText.nodeValue);
+            theWinnerABC(divEightText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divEightText = document.createTextNode("O");
-            theWinner(divEightText.nodeValue);
+            theWinnerABC(divEightText.nodeValue);
         }
 
         divEight.appendChild(divEightText);
@@ -303,10 +306,10 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divNineText = document.createTextNode("X");
-            theWinner(divNineText.nodeValue);
+            theWinnerABC(divNineText.nodeValue);
         }else if(exOrCircle === "Player 2"){
             divNineText = document.createTextNode("O");
-            theWinner(divNineText.nodeValue);
+            theWinnerABC(divNineText.nodeValue);
         }
 
         divNine.appendChild(divNineText);
