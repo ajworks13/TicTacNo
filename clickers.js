@@ -115,6 +115,25 @@ const gameStart = () => {
         
 
 
+
+
+        if(winner[0][0] === "O" && winner[0][1] === "O" && winner[0][2] === "O"){
+            console.log("Won by O's");
+        }
+    
+    
+        if(winner[1][0] === "O" && winner[1][1] === "O" && winner[1][2] === "O"){
+            console.log("Won by O's");
+        }
+        
+    
+
+    
+        if(winner[2][0] === "O" && winner[2][1] === "O" && winner[2][2] === "O"){
+            console.log("Won by O's");
+        }
+
+
     }
     
 
@@ -133,13 +152,13 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divOneText = document.createTextNode("X");
-            winner[0].push(divOneText.nodeValue);
-            winnerABC();
+            winner[0][0] = (divOneText.nodeValue);
+            theWinnerABC();
            // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
-            winner[0].push(divOneText.nodeValue);
-            winnerABC();
+            winner[0][0] = (divOneText.nodeValue);
+            theWinnerABC();
         }
 
         divOne.appendChild(divOneText);
@@ -158,10 +177,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divTwoText = document.createTextNode("X");
-            theWinnerABC(divTwoText.nodeValue);
+            winner[0][1] = (divTwoText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divTwoText = document.createTextNode("O");
-            theWinnerABC(divTwoText.nodeValue);
+            winner[0][1] = (divTwoText.nodeValue);
+            theWinnerABC();
         }
 
         divTwo.appendChild(divTwoText);
@@ -180,10 +201,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divThreeText = document.createTextNode("X");
-            theWinnerABC(divThreeText.nodeValue);
+            winner[0][2] = (divThreeText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divThreeText = document.createTextNode("O");
-            theWinnerABC(divThreeText.nodeValue);
+            winner[0][2] = (divThreeText.nodeValue);
+            theWinnerABC();
         }
 
         divThree.appendChild(divThreeText);
@@ -202,10 +225,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFourText = document.createTextNode("X");
-            theWinnerABC(divFourText.nodeValue);
+            winner[1][0] = (divFourText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divFourText = document.createTextNode("O");
-            theWinnerABC(divFourText.nodeValue);
+            winner[1][0] = (divFourText.nodeValue);
+            theWinnerABC();
         }
 
         divFour.appendChild(divFourText);
@@ -224,10 +249,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divFiveText = document.createTextNode("X");
-            theWinnerABC(divFiveText.nodeValue);
+            winner[1][1] = (divFiveText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divFiveText = document.createTextNode("O");
-            theWinnerABC(divFiveText.nodeValue);
+            winner[1][1] = (divFiveText.nodeValue);
+            theWinnerABC();
         }
 
         divFive.appendChild(divFiveText);
@@ -246,10 +273,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSixText = document.createTextNode("X");
-            theWinnerABC(divSixText.nodeValue);
+            winner[1][2] = (divSixText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divSixText = document.createTextNode("O");
-            theWinnerABC(divSixText.nodeValue);
+            winner[1][2] = (divSixText.nodeValue);
+            theWinnerABC();
         }
 
         divSix.appendChild(divSixText);
@@ -268,10 +297,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divSevenText = document.createTextNode("X");
-            theWinnerABC(divSevenText.nodeValue);
+            winner[2][0] = (divSevenText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divSevenText = document.createTextNode("O");
-            theWinnerABC(divSevenText.nodeValue);
+            winner[2][0] = (divSevenText.nodeValue);
+            theWinnerABC();
         }
 
         divSeven.appendChild(divSevenText);
@@ -290,10 +321,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divEightText = document.createTextNode("X");
-            theWinnerABC(divEightText.nodeValue);
+            winner[2][1] = (divEightText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divEightText = document.createTextNode("O");
-            theWinnerABC(divEightText.nodeValue);
+            winner[2][1] = (divEightText.nodeValue);
+            theWinnerABC();
         }
 
         divEight.appendChild(divEightText);
@@ -312,10 +345,12 @@ const gameStart = () => {
 
         if(exOrCircle === "Player 1"){
             divNineText = document.createTextNode("X");
-            theWinnerABC(divNineText.nodeValue);
+            winner[2][2] = (divNineText.nodeValue);
+            theWinnerABC();
         }else if(exOrCircle === "Player 2"){
             divNineText = document.createTextNode("O");
-            theWinnerABC(divNineText.nodeValue);
+            winner[2][2] = (divNineText.nodeValue);
+            theWinnerABC();
         }
 
         divNine.appendChild(divNineText);
