@@ -84,6 +84,8 @@ const gameStart = () => {
         []
     ];
 
+
+    // Determine winner here.
     const theWinner = () => {
         
 
@@ -97,7 +99,36 @@ const gameStart = () => {
         if(winner[2][0] === "X" && winner[2][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
         }
-        
+
+
+        if(winner[0][0] === "X" && winner[1][0] === "X" && winner[2][0] === "X"){
+            console.log("Won by X's");
+        }
+        if(winner[0][1] === "X" && winner[1][1] === "X" && winner[2][1] === "X"){
+            console.log("Won by X's");
+        }
+        if(winner[0][2] === "X" && winner[1][2] === "X" && winner[2][2] === "X"){
+            console.log("Won by X's");
+        }
+
+
+        // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\      CROSS AXIS      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        if(winner[0][0] === "X" && winner[1][1] === "X" && winner[2][2] === "X"){
+            console.log("Won by X's");
+        }
+        if(winner[0][2] === "X" && winner[1][1] === "X" && winner[2][0] === "X"){
+            console.log("Won by X's");
+        }
+
+
+
+        if(winner[0][0] === "O" && winner[1][1] === "O" && winner[2][2] === "O"){
+            console.log("Won by O's");
+        }
+        if(winner[0][2] === "O" && winner[1][1] === "O" && winner[2][0] === "O"){
+            console.log("Won by O's");
+        }
 
 
 
@@ -120,6 +151,16 @@ const gameStart = () => {
             console.log("Won by O's");
         }
 
+        if(winner[0][0] === "O" && winner[1][0] === "O" && winner[2][0] === "O"){
+            console.log("Won by O's");
+        }
+        if(winner[0][1] === "O" && winner[1][1] === "O" && winner[2][1] === "O"){
+            console.log("Won by O's");
+        }
+        if(winner[0][2] === "O" && winner[1][2] === "O" && winner[2][2] === "O"){
+            console.log("Won by O's");
+        }
+
 
 
 
@@ -134,8 +175,6 @@ const gameStart = () => {
     
 
     // these boxes will spawn randomly inside the TicTacNo board.
-  
-    
     const box_A = (exOrCircle) => {
 
         let divOne = document.createElement('div');
@@ -150,7 +189,6 @@ const gameStart = () => {
             divOneText = document.createTextNode("X");
             winner[0][0] = (divOneText.nodeValue);
             theWinner();
-           // allNineBoxes.push(1);
         }else if(exOrCircle === "Player 2"){
             divOneText = document.createTextNode("O");
             winner[0][0] = (divOneText.nodeValue);
