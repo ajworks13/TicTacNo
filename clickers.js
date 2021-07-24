@@ -45,16 +45,35 @@ const gameStart = () => {
     let slotEight = document.querySelector('.slotEight');
     let slotNine = document.querySelector('.slotNine');
 
+    let divOneText = null;
+    let divTwoText= null;
+    let divThreeText = null;
+    let divFourText = null;
+    let divFiveText = null;
+    let divSixText = null;
+    let divSevenText = null;
+    let divEightText = null;
+    let divNineText = null;
     
-    let divOneText,
-        divTwoText, 
-        divThreeText, 
-        divFourText, 
-        divFiveText,
-        divSixText, 
-        divSevenText, 
-        divEightText, 
-        divNineText;
+    // let divOneText,
+    //     divTwoText, 
+    //     divThreeText, 
+    //     divFourText, 
+    //     divFiveText,
+    //     divSixText, 
+    //     divSevenText, 
+    //     divEightText, 
+    //     divNineText;
+
+    let divOne = document.createElement('div');
+    let divTwo = document.createElement('div');
+    let divThree = document.createElement('div');
+    let divFour = document.createElement('div');
+    let divFive = document.createElement('div');
+    let divSix = document.createElement('div');
+    let divSeven = document.createElement('div');
+    let divEight = document.createElement('div');
+    let divNine = document.createElement('div');
 
     let gameOver = false;
 
@@ -84,31 +103,43 @@ const gameStart = () => {
         []
     ];
 
+    const highlighter = (divs1, divs2, divs3) => {
+        divs1.style.borderColor = 'green';
+        divs2.style.borderColor = 'green';
+        divs3.style.borderColor = 'green';
+    }
+
 
     // Determine winner here.
     const theWinner = () => {
         
-
+        let d1 = divOneText;
        
         if(winner[0][0] === "X" && winner[0][1] === "X" && winner[0][2] === "X"){
             console.log("Won by X's");
+            highlighter(slotOne, slotTwo, slotThree);
         }
         else if(winner[1][0] === "X" && winner[1][1] === "X" && winner[1][2] === "X"){
             console.log("Won by X's");
+            highlighter(slotFour, slotFive, slotSix);
         }
         else if(winner[2][0] === "X" && winner[2][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
+            highlighter(slotSeven, slotEight, slotNine);
         }
 
 
         else if(winner[0][0] === "X" && winner[1][0] === "X" && winner[2][0] === "X"){
             console.log("Won by X's");
+            highlighter(slotOne, slotFour, slotSeven);
         }
         else if(winner[0][1] === "X" && winner[1][1] === "X" && winner[2][1] === "X"){
             console.log("Won by X's");
+            highlighter(slotTwo, slotFive, slotEight);
         }
         else if(winner[0][2] === "X" && winner[1][2] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
+            highlighter(slotThree, slotSix, slotNine);
         }
 
 
@@ -116,18 +147,22 @@ const gameStart = () => {
 
         else if(winner[0][0] === "X" && winner[1][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
+            highlighter(slotOne, slotFive, slotNine);
         }
         else if(winner[0][2] === "X" && winner[1][1] === "X" && winner[2][0] === "X"){
             console.log("Won by X's");
+            highlighter(slotThree, slotFive, slotSeven);
         }
 
 
 
         else if(winner[0][0] === "O" && winner[1][1] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
+            highlighter(slotOne, slotFive, slotNine);
         }
         else if(winner[0][2] === "O" && winner[1][1] === "O" && winner[2][0] === "O"){
             console.log("Won by O's");
+            highlighter(slotThree, slotFive, slotSeven);
         }
 
 
@@ -137,22 +172,29 @@ const gameStart = () => {
 
         else if(winner[0][0] === "O" && winner[0][1] === "O" && winner[0][2] === "O"){
             console.log("Won by O's");
+            highlighter(slotOne, slotTwo, slotThree);
         }
         else if(winner[1][0] === "O" && winner[1][1] === "O" && winner[1][2] === "O"){
             console.log("Won by O's");
+            highlighter(slotFour, slotFive, slotSix);
         }
         else if(winner[2][0] === "O" && winner[2][1] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
+            highlighter(slotSeven, slotEight, slotNine);
         }
+
 
         else if(winner[0][0] === "O" && winner[1][0] === "O" && winner[2][0] === "O"){
             console.log("Won by O's");
+            highlighter(slotOne, slotFour, slotSeven);
         }
         else if(winner[0][1] === "O" && winner[1][1] === "O" && winner[2][1] === "O"){
             console.log("Won by O's");
+            highlighter(slotTwo, slotFive, slotEight);
         }
         else if(winner[0][2] === "O" && winner[1][2] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
+            highlighter(slotThree, slotSix, slotNine);
         }
         
         
@@ -171,7 +213,7 @@ const gameStart = () => {
     // these boxes will spawn randomly inside the TicTacNo board.
     const box_A = (exOrCircle) => {
 
-        let divOne = document.createElement('div');
+        //let divOne = document.createElement('div');
         divOne.style.backgroundColor = 'transparent';
         divOne.style.fontSize = '70px';
         divOne.style.color = 'black';
@@ -194,7 +236,7 @@ const gameStart = () => {
     }
 
     const box_B = (exOrCircle) => {
-        let divTwo = document.createElement('div');
+        //let divTwo = document.createElement('div');
         divTwo.style.backgroundColor = 'transparent';
         divTwo.style.fontSize = '70px';
         divTwo.style.color = 'black';
@@ -218,7 +260,7 @@ const gameStart = () => {
     }
 
     const box_C = (exOrCircle) => {
-        let divThree = document.createElement('div');
+       // let divThree = document.createElement('div');
         divThree.style.backgroundColor = 'transparent';
         divThree.style.fontSize = '70px';
         divThree.style.color = 'black';
@@ -242,7 +284,7 @@ const gameStart = () => {
     }
 
     const box_D = (exOrCircle) => {
-        let divFour = document.createElement('div');
+       // let divFour = document.createElement('div');
         divFour.style.backgroundColor = 'transparent';
         divFour.style.fontSize = '70px';
         divFour.style.color = 'black';
@@ -266,7 +308,7 @@ const gameStart = () => {
     }
 
     const box_E = (exOrCircle) => {
-        let divFive = document.createElement('div');
+       // let divFive = document.createElement('div');
         divFive.style.backgroundColor = 'transparent';
         divFive.style.fontSize = '70px';
         divFive.style.color = 'black';
@@ -290,7 +332,7 @@ const gameStart = () => {
     }
 
     const box_F = (exOrCircle) => {
-        let divSix = document.createElement('div');
+       // let divSix = document.createElement('div');
         divSix.style.backgroundColor = 'transparent';
         divSix.style.fontSize = '70px';
         divSix.style.color = 'black';
@@ -314,7 +356,7 @@ const gameStart = () => {
     }
 
     const box_G = (exOrCircle) => {
-        let divSeven = document.createElement('div');
+       // let divSeven = document.createElement('div');
         divSeven.style.backgroundColor = 'transparent';
         divSeven.style.fontSize = '70px';
         divSeven.style.color = 'black';
@@ -338,7 +380,7 @@ const gameStart = () => {
     }
 
     const box_H = (exOrCircle) => {
-        let divEight = document.createElement('div');
+       // let divEight = document.createElement('div');
         divEight.style.backgroundColor = 'transparent';
         divEight.style.fontSize = '70px';
         divEight.style.color = 'black';
@@ -362,7 +404,7 @@ const gameStart = () => {
     }
 
     const box_I = (exOrCircle) => {
-        let divNine = document.createElement('div');
+       // let divNine = document.createElement('div');
         divNine.style.backgroundColor = 'transparent';
         divNine.style.fontSize = '70px';
         divNine.style.color = 'black';
