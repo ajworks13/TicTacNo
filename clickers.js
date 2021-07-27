@@ -96,9 +96,15 @@ const gameStart = () => {
     ];
 
     const highlighter = (divs1, divs2, divs3) => {
+        divs1.style.transition = '1s';
+        divs2.style.transition = '1s';
+        divs3.style.transition = '1s';
+
         divs1.style.backgroundColor = 'green';
         divs2.style.backgroundColor = 'green';
         divs3.style.backgroundColor = 'green';
+
+        
         console.log("HERE IT IS");
     }
 
@@ -110,28 +116,34 @@ const gameStart = () => {
         if(winner[0][0] === "X" && winner[0][1] === "X" && winner[0][2] === "X"){
             console.log("Won by X's");
             highlighter(slotOne, slotTwo, slotThree);
+            gameOver = true;
         }
         else if(winner[1][0] === "X" && winner[1][1] === "X" && winner[1][2] === "X"){
             console.log("Won by X's");
             highlighter(slotFour, slotFive, slotSix);
+            gameOver = true;
         }
         else if(winner[2][0] === "X" && winner[2][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
             highlighter(slotSeven, slotEight, slotNine);
+            gameOver = true;
         }
 
 
         else if(winner[0][0] === "X" && winner[1][0] === "X" && winner[2][0] === "X"){
             console.log("Won by X's");
             highlighter(slotOne, slotFour, slotSeven);
+            gameOver = true;
         }
         else if(winner[0][1] === "X" && winner[1][1] === "X" && winner[2][1] === "X"){
             console.log("Won by X's");
             highlighter(slotTwo, slotFive, slotEight);
+            gameOver = true;
         }
         else if(winner[0][2] === "X" && winner[1][2] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
             highlighter(slotThree, slotSix, slotNine);
+            gameOver = true;
         }
 
 
@@ -140,10 +152,12 @@ const gameStart = () => {
         else if(winner[0][0] === "X" && winner[1][1] === "X" && winner[2][2] === "X"){
             console.log("Won by X's");
             highlighter(slotOne, slotFive, slotNine);
+            gameOver = true;
         }
         else if(winner[0][2] === "X" && winner[1][1] === "X" && winner[2][0] === "X"){
             console.log("Won by X's");
             highlighter(slotThree, slotFive, slotSeven);
+            gameOver = true;
         }
 
 
@@ -151,10 +165,12 @@ const gameStart = () => {
         else if(winner[0][0] === "O" && winner[1][1] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
             highlighter(slotOne, slotFive, slotNine);
+            gameOver = true;
         }
         else if(winner[0][2] === "O" && winner[1][1] === "O" && winner[2][0] === "O"){
             console.log("Won by O's");
             highlighter(slotThree, slotFive, slotSeven);
+            gameOver = true;
         }
 
 
@@ -165,28 +181,34 @@ const gameStart = () => {
         else if(winner[0][0] === "O" && winner[0][1] === "O" && winner[0][2] === "O"){
             console.log("Won by O's");
             highlighter(slotOne, slotTwo, slotThree);
+            gameOver = true;
         }
         else if(winner[1][0] === "O" && winner[1][1] === "O" && winner[1][2] === "O"){
             console.log("Won by O's");
             highlighter(slotFour, slotFive, slotSix);
+            gameOver = true;
         }
         else if(winner[2][0] === "O" && winner[2][1] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
             highlighter(slotSeven, slotEight, slotNine);
+            gameOver = true;
         }
 
 
         else if(winner[0][0] === "O" && winner[1][0] === "O" && winner[2][0] === "O"){
             console.log("Won by O's");
             highlighter(slotOne, slotFour, slotSeven);
+            gameOver = true;
         }
         else if(winner[0][1] === "O" && winner[1][1] === "O" && winner[2][1] === "O"){
             console.log("Won by O's");
             highlighter(slotTwo, slotFive, slotEight);
+            gameOver = true;
         }
         else if(winner[0][2] === "O" && winner[1][2] === "O" && winner[2][2] === "O"){
             console.log("Won by O's");
             highlighter(slotThree, slotSix, slotNine);
+            gameOver = true;
         }
         
         
@@ -199,6 +221,13 @@ const gameStart = () => {
             }
         }
 
+    }
+
+    if(gameOver === true){
+        alert("Game over!");
+        setTimeout(() => {
+            gameStart();
+        }, 3000);
     }
     
 
