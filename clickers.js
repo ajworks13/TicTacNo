@@ -111,9 +111,16 @@ const gameStart = () => {
     }
     const endIt = () => {
         if(gameOver === true){
-            setTimeout(() => {
-                alert("Game over!");
+            let ender = setTimeout(() => {
+                let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
+                if(user === 'y'){
+                    gameStart();
+                }else{
+                    alert("Thanks for playing! :D")
+                    return;
+                }
                 gameStart();
+                clearTimeout(ender);
             }, 1000);
         }
     }
