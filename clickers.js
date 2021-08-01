@@ -111,15 +111,19 @@ const gameStart = () => {
     }
     const endIt = () => {
         if(gameOver === true){
+            console.log("Gameover status = " + gameOver);
             let ender = setTimeout(() => {
                 let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
                 if(user === 'y'){
                     gameStart();
                 }else{
                     alert("Thanks for playing! :D")
-                    return;
+                    clearInterval(p1);
+                    clearInterval(p2);
+                    clearInterval(playerOne);
+                    clearInterval(playerTwo);
                 }
-                gameStart();
+                
                 clearTimeout(ender);
             }, 1000);
         }
