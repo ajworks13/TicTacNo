@@ -122,5 +122,17 @@ $powerUp: red;
         #player1, #player2{
             background-color: black;
         }
+        .clickHereNotice{
+            position: absolute;
+            font-size: 10px;
+            background-color: transparent;
+            margin-left: 70px;
+            margin-top: -90px;
+            
+            span{
+                background-color: transparent;
+                color: gray;
+            }
+        }
     }
 }
