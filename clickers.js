@@ -1,6 +1,5 @@
 
 
-
 const gameStart = () => {
     //alert("Hello and welcome to 'TicTacNo'!\nEach player will click on the bottom black box to roll a number between 1 - 6. If you land on the POWER BOX, you will get the ability to take 2 slots at once when you arrive back around to the starting line. Same Tic tac toe rules, but with chances.\nEnjoy!")
 
@@ -109,6 +108,7 @@ const gameStart = () => {
         
         console.log("HERE IT IS");
     }
+
     const endIt = () => {
         if(gameOver === true){
             console.log("Gameover status = " + gameOver);
@@ -116,17 +116,19 @@ const gameStart = () => {
                 let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
                 if(user === 'y'){
                     gameStart();
-                }else{
+                }else if(user === 'n'){
                     alert("Thanks for playing! :D")
-                    clearInterval(p1);
-                    clearInterval(p2);
-                    clearInterval(playerOne);
-                    clearInterval(playerTwo);
+                    throw new Error("Done");
                 }
                 
                 clearTimeout(ender);
             }, 1000);
         }
+    }
+
+    if(gameOver === true){
+        clearInterval(p1);
+        clearInterval(p2);
     }
 
     
@@ -2142,9 +2144,8 @@ const gameStart = () => {
     //starts it off.
     p1 = setInterval(playerOne, 1000);
     
-    // divOneText = "X";
+   
 
-    
 
 }
 
