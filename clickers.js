@@ -111,6 +111,7 @@ const gameStart = () => {
 
     const endIt = () => {
         if(gameOver === true){
+            count = 5;
             console.log("Gameover status = " + gameOver);
             let ender = setTimeout(() => {
                 let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
@@ -118,7 +119,7 @@ const gameStart = () => {
                     gameStart();
                 }else if(user === 'n'){
                     alert("Thanks for playing! :D")
-                    throw new Error("Done");
+                    
                 }
                 
                 clearTimeout(ender);
@@ -126,10 +127,6 @@ const gameStart = () => {
         }
     }
 
-    if(gameOver === true){
-        clearInterval(p1);
-        clearInterval(p2);
-    }
 
     
     // Determine winner here.
@@ -514,8 +511,13 @@ const gameStart = () => {
                 clearInterval(p1);
                 count = 0;
                 p2 = setInterval(playerTwo, 1000);
+            }else if(count === 5){
+                clearInterval(p1);
+                clearInterval(p2);
             }
+            
         }
+
     }
 
     const playerTwo = () => {
@@ -530,52 +532,15 @@ const gameStart = () => {
                 clearInterval(p2);
                 count = 0;
                 p1 = setInterval(playerOne, 1000);
+            }else if(count === 5){
+                clearInterval(p1);
+                clearInterval(p2);
             }
+            
         }
+
     }
 
-    // LEFT OFF HERE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    // 7/19
-    /*
-               POSSIBLE FORMULA
-
-
-                                                let list = [];
-                                                const letters = (...letts) => {
-                                                
-                                                list.push(letts);
-                                                
-                                                for(lists of list){
-                                                    console.log(list);
-                                                }
-                                                
-                                                //console.log(list);
-                                                if(list.length === 3){
-                                                    console.log("winner");
-                                                }
-                                                
-                                                }
-
-                                                const apple = () =>{
-                                                let one = '1';
-                                                letters(one)
-                                                }
-                                                const orange = () =>{
-                                                let two = "2";
-                                                letters(two);
-                                                }
-                                                const grape = () =>{
-                                                let three = "3";
-                                                letters(three);
-                                                }
-
-                                                apple();
-                                                orange();
-                                                grape();
-
-    */
-    
-   
     
     
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
@@ -2150,3 +2115,5 @@ const gameStart = () => {
 }
 
 gameStart();
+
+
