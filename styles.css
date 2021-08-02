@@ -107,5 +107,16 @@
   .theTextArea #player1, .theTextArea #player2 {
     background-color: black;
   }
+  .theTextArea .clickHereNotice {
+    position: absolute;
+    font-size: 10px;
+    background-color: transparent;
+    margin-left: 70px;
+    margin-top: -90px;
+  }
+  .theTextArea .clickHereNotice span {
+    background-color: transparent;
+    color: gray;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
