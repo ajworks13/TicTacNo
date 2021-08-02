@@ -112,19 +112,44 @@ const gameStart = () => {
     const endIt = () => {
         if(gameOver === true){
             count = 5;
+            
             console.log("Gameover status = " + gameOver);
             let ender = setTimeout(() => {
-                let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
-                if(user === 'y'){
-                    gameStart();
-                }else if(user === 'n'){
-                    alert("Thanks for playing! :D")
+                
+                alert("Game over!");
+                //                       CANT GET THIS TO WORK PROPERLY AT THE MOMENT.
+                // let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
+                // if(user === 'y'){
+                //     gameStart();
+                // }else if(user === 'n'){
+                //     alert("Thanks for playing! :D")
                     
-                }
+                // }
                 
                 clearTimeout(ender);
             }, 1000);
         }
+    }
+
+    const restartingGame = () => {
+        rolled1 = 0;
+        rolled2 = 0;
+        rolled3 = 0;
+        rolled21 = 0;
+        rolled22 = 0;
+        rolled23 = 0;
+
+        divOneText = null;
+        divTwoText= null;
+        divThreeText = null;
+        divFourText = null;
+        divFiveText = null;
+        divSixText = null;
+        divSevenText = null;
+        divEightText = null;
+        divNineText = null;
+
+
     }
 
 
