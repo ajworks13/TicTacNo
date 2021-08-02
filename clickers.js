@@ -117,6 +117,7 @@ const gameStart = () => {
             let ender = setTimeout(() => {
                 
                 alert("Game over!");
+
                 //                       CANT GET THIS TO WORK PROPERLY AT THE MOMENT.
                 // let user = prompt("Game over!/nWould you like to play again?/nEnter 'Y' for YES or 'N' for NO.");
                 // if(user === 'y'){
@@ -128,10 +129,31 @@ const gameStart = () => {
                 
                 clearTimeout(ender);
             }, 1000);
+
+            // STOPS USER FROM DOING ANYTHING ELSE ONCE THE GAME IS OVER
+            let stopShield = document.createElement('div');
+            stopShield.style.backgroundColor = 'transparent';
+            stopShield.style.position = 'absolute';
+            stopShield.style.zIndex = '3';
+            stopShield.style.marginTop = '-900px';
+            stopShield.style.width = "100%";
+            stopShield.style.height = "1000px";
+
+            document.body.appendChild(stopShield);
         }
     }
 
+
+    //            NOT GOING TO USE THIS YET.
     const restartingGame = () => {
+        gameOver = false;
+        allNineBoxes = [];
+        winner = [
+            [],
+            [],
+            []
+        ];
+
         rolled1 = 0;
         rolled2 = 0;
         rolled3 = 0;
