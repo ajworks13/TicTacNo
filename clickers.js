@@ -179,7 +179,10 @@ const gameStart = () => {
     // Determine winner here.
     const theWinner = () => {
         
-       
+        
+
+
+
         if(winner[0][0] === "X" && winner[0][1] === "X" && winner[0][2] === "X"){
             console.log("Won by X's");
             highlighter(slotOne, slotTwo, slotThree);
@@ -292,8 +295,21 @@ const gameStart = () => {
             highlighter(slotThree, slotSix, slotNine);
             gameOver = true;
             endIt();
-        }else if(allNineBoxes.length === 9){
+        }else if(allNineBoxes.length === 8 && gameOver != true){
             alert("DRAW!!");
+            console.log("DRRRRAAWWWW");
+            gameOver = true;
+
+            // STOPS USER FROM DOING ANYTHING ELSE ONCE THE GAME IS OVER
+            let stopShield = document.createElement('div');
+            stopShield.style.backgroundColor = 'transparent';
+            stopShield.style.position = 'absolute';
+            stopShield.style.zIndex = '3';
+            stopShield.style.marginTop = '-900px';
+            stopShield.style.width = "100%";
+            stopShield.style.height = "1000px";
+
+            document.body.appendChild(stopShield);
         }
         
         // LEFT OFF HERE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
