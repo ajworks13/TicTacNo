@@ -1999,31 +1999,33 @@ const gameStart = () => {
         
     }
     
-    let randomPowerSpawn = Math.floor((Math.random() * 5) + 1);
-    const powerSelector = () => {
-        //selects slot two - twelve
-        //const randomPowerSpawn = Math.floor((Math.random() * 5) + 1);
-        console.log("the location is now at >>> " + randomPowerSpawn);
-    
-        //if selectors
-        if(randomPowerSpawn === 1){
-            two.style.border = "2px solid red";
-            
-        }else if(randomPowerSpawn === 2){
-            three.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 3){
-            four.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 4){
-            five.style.border = "2px solid red";
-        }
-        else if(randomPowerSpawn === 5){
-            six.style.border = "2px solid red";
-        }
-    }
 
-    powerSelector();
+    // Maybe in another update I will add this to make it a bit more interesting.
+    // let randomPowerSpawn = Math.floor((Math.random() * 5) + 1);
+    // const powerSelector = () => {
+    //     //selects slot two - twelve
+    //     //const randomPowerSpawn = Math.floor((Math.random() * 5) + 1);
+    //     console.log("the location is now at >>> " + randomPowerSpawn);
+    
+    //     //if selectors
+    //     if(randomPowerSpawn === 1){
+    //         two.style.border = "2px solid red";
+            
+    //     }else if(randomPowerSpawn === 2){
+    //         three.style.border = "2px solid red";
+    //     }
+    //     else if(randomPowerSpawn === 3){
+    //         four.style.border = "2px solid red";
+    //     }
+    //     else if(randomPowerSpawn === 4){
+    //         five.style.border = "2px solid red";
+    //     }
+    //     else if(randomPowerSpawn === 5){
+    //         six.style.border = "2px solid red";
+    //     }
+    // }
+
+    //powerSelector();
     
     
 
