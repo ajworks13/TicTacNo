@@ -292,8 +292,9 @@ const gameStart = () => {
             highlighter(slotThree, slotSix, slotNine);
             gameOver = true;
             endIt();
+        }else if(allNineBoxes.length === 9){
+            alert("DRAW!!");
         }
-        
         
         // LEFT OFF HERE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -593,25 +594,7 @@ const gameStart = () => {
     // this function catches the random box that is going to be selected and printed. It also catches the players roll number.
     const ticTacNoChecker = (thePerson, boxNumbers) =>{
         
-        // const random15 = [1,5];
-        // const random67 = [6,7];
-        // const random147 = [1,4,7];
-        // const random246 = [2,4,6];
-        // const random135 = [1,3,5];
-        // const random258 = [2,5,8];
-        // const random369 = [3,6,9];
-        // const random124 = [1,2,4];
-        // const random234789 = [2,3,4,7,8,9];
-        // const random234578 = [2,3,4,5,7,8];
-        // const random13456789 = [1,3,4,5,6,7,8,9];
-        // const random12456789 = [1,2,4,5,6,7,8,9];
-        // const random12356789 = [1,2,3,5,6,7,8,9];
-        // const random12346789 = [1,2,3,4,6,7,8,9];
-        // const random12345789 = [1,2,3,4,5,7,8,9];
-        // const random12345689 = [1,2,3,4,5,6,8,9];
-        // const random12345679 = [1,2,3,4,5,6,7,9];
-        // const random12345678 = [1,2,3,4,5,6,7,8];
-
+      
         
         // This function makes sure that the numbers are NOT repeated. If a repeated number comes in, the function reruns until a new number is found.
         const letsRanomize = (tempArr) =>{
@@ -629,133 +612,6 @@ const gameStart = () => {
         letsRanomize(allNineBoxes);
         
 
-       // boxNumbers = generateNums(1,2);
-        // if(allNineBoxes.length === 0){
-        //     boxNumbers = generateNums(1,9);
-        // }else if(allNineBoxes.includes("one")){
-        //     boxNumbers = generateNums(2,9);
-        //     console.log("Avoiding 1");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two"))){
-        //     boxNumbers = generateNums(3,9);
-        //     console.log("Avoiding 1-2");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two"))){
-        //     boxNumbers = generateNums(3,9);
-        //     console.log("Avoiding 1-2");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three"))){
-        //     boxNumbers = generateNums(4,9);
-        //     console.log("Avoiding 1-2-3");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four"))){
-        //     boxNumbers = generateNums(5,9);
-        //     console.log("Avoiding 1-2-3-4");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four")) && (allNineBoxes.includes("five"))){
-        //     boxNumbers = generateNums(6,9);
-        //     console.log("Avoiding 1-2-3-4-5");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four")) && (allNineBoxes.includes("five")) && (allNineBoxes.includes("six"))){
-        //     boxNumbers = generateNums(7,9);
-        //     console.log("Avoiding 1-2-3-4-5-6");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four")) && (allNineBoxes.includes("five")) && (allNineBoxes.includes("six")) && (allNineBoxes.includes("seven"))){
-        //     boxNumbers = generateNums(8,9);
-        //     console.log("Avoiding 1-2-3-4-5-6-7");
-        // }else if(allNineBoxes.includes("one") && (allNineBoxes.includes("two")) && (allNineBoxes.includes("three")) && (allNineBoxes.includes("four")) && (allNineBoxes.includes("five")) && (allNineBoxes.includes("six")) && (allNineBoxes.includes("seven")) && (allNineBoxes.includes("eight"))){
-        //     boxNumbers = 9;
-        //     console.log("Avoiding 1-2-3-4-5-6-7-8");
-
-
-
-
-        // }else if(allNineBoxes.includes("two")){
-        //     const r = Math.floor(Math.random() * random13456789.length);
-        //     boxNumbers = random13456789[r];
-        //     console.log("avoiding 2");
-        // }else if(allNineBoxes.includes("three")){
-        //     const r = Math.floor(Math.random() * random12456789.length);
-        //     boxNumbers = random12456789[r];
-        //     console.log("avoiding 3");
-        // }else if(allNineBoxes.includes("four")){
-        //     const r = Math.floor(Math.random() * random12356789.length);
-        //     boxNumbers = random12356789[r];
-        //     console.log("avoiding 4");
-        // }else if(allNineBoxes.includes("five")){
-        //     const r = Math.floor(Math.random() * random12346789.length);
-        //     boxNumbers = random12346789[r];
-        //     console.log("avoiding 5");
-        // }else if(allNineBoxes.includes("six")){
-        //     const r = Math.floor(Math.random() * random12345789.length);
-        //     boxNumbers = random12345789[r];
-        //     console.log("avoiding 6");
-        // }else if(allNineBoxes.includes("seven")){
-        //     const r = Math.floor(Math.random() * random12345689.length);
-        //     boxNumbers = random12345689[r];
-        //     console.log("avoiding 7");
-        // }else if(allNineBoxes.includes("eight")){
-        //     const r = Math.floor(Math.random() * random12345679.length);
-        //     boxNumbers = random12345679[r];
-        //     console.log("avoiding 8");
-        // }else if(allNineBoxes.includes("nine")){
-        //     const r = Math.floor(Math.random() * random12345678.length);
-        //     boxNumbers = random12345678[r];
-        //     console.log("avoiding 9");
-
-
-
-
-
-
-        // }else if(allNineBoxes.includes("one") && allNineBoxes.includes("five")){
-        //     const r = Math.floor(Math.random() * random15.length);
-        //     boxNumbers = random15[r];
-        //     console.log("avoiding 1-5");
-        // }else if(allNineBoxes.includes("six") && allNineBoxes.includes("seven")){
-        //     const r = Math.floor(Math.random() * random67.length);
-        //     boxNumbers = random67[r];
-        //     console.log("avoiding 6-7");
-
-
-
-       
-        
-        
-        
-        
-        
-        
-        
-        // }else if(allNineBoxes.includes("one") && allNineBoxes.includes("three") && allNineBoxes.includes("five")){
-        //     const r = Math.floor(Math.random() * random246.length);
-        //     boxNumbers = random246[r];
-        //     console.log("avoiding 1-3-5");
-        // }else if(allNineBoxes.includes("one") && allNineBoxes.includes("four") && allNineBoxes.includes("seven")){
-        //     const r = Math.floor(Math.random() * random147.length);
-        //     boxNumbers = random147[r];
-        //     console.log("avoiding 1-4-7");
-        // }else if(allNineBoxes.includes("two") && allNineBoxes.includes("five") && allNineBoxes.includes("eight")){
-        //     const r = Math.floor(Math.random() * random258.length);
-        //     boxNumbers = random258[r];
-        //     console.log("avoiding 2-5-8");
-        // }else if(allNineBoxes.includes("three") && allNineBoxes.includes("six") && allNineBoxes.includes("nine")){
-        //     const r = Math.floor(Math.random() * random369.length);
-        //     boxNumbers = random369[r];
-        //     console.log("avoiding 3-6-9");
-        // }else if(allNineBoxes.includes("two") && allNineBoxes.includes("four") && allNineBoxes.includes("six")){
-        //     const r = Math.floor(Math.random() * random135.length);
-        //     boxNumbers = random135[r];
-        // }else if(allNineBoxes.includes("one") && allNineBoxes.includes("two") && allNineBoxes.includes("four")){
-        //     const r = Math.floor(Math.random() * random124.length);
-        //     boxNumbers = random124[r];
-        
-        
-        
-        
-        
-        
-        // }else if(allNineBoxes.includes("two") && allNineBoxes.includes("three") && allNineBoxes.includes("four") && allNineBoxes.includes("seven") && allNineBoxes.includes("eight") && allNineBoxes.includes("nine")){
-        //     const r = Math.floor(Math.random() * random234789.length);
-        //     boxNumbers = random234789[r];
-        // }else if(allNineBoxes.includes("two") && allNineBoxes.includes("three") && allNineBoxes.includes("four") && allNineBoxes.includes("five") && allNineBoxes.includes("seven") && allNineBoxes.includes("eight")){
-        //     const r = Math.floor(Math.random() * random234578.length);
-        //     boxNumbers = random234578[r];
-        // }
-    
 
 
         // these statements push the X's or O's into the random place.
@@ -815,6 +671,8 @@ const gameStart = () => {
                 console.log('this is from for loop: ' + allNineBoxes[x]);
             }
         }
+
+        
 
        
 
