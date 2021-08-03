@@ -145,34 +145,34 @@ const gameStart = () => {
 
 
     //            NOT GOING TO USE THIS YET.
-    const restartingGame = () => {
-        gameOver = false;
-        allNineBoxes = [];
-        winner = [
-            [],
-            [],
-            []
-        ];
+    // const restartingGame = () => {
+    //     gameOver = false;
+    //     allNineBoxes = [];
+    //     winner = [
+    //         [],
+    //         [],
+    //         []
+    //     ];
 
-        rolled1 = 0;
-        rolled2 = 0;
-        rolled3 = 0;
-        rolled21 = 0;
-        rolled22 = 0;
-        rolled23 = 0;
+    //     rolled1 = 0;
+    //     rolled2 = 0;
+    //     rolled3 = 0;
+    //     rolled21 = 0;
+    //     rolled22 = 0;
+    //     rolled23 = 0;
 
-        divOneText = null;
-        divTwoText= null;
-        divThreeText = null;
-        divFourText = null;
-        divFiveText = null;
-        divSixText = null;
-        divSevenText = null;
-        divEightText = null;
-        divNineText = null;
+    //     divOneText = null;
+    //     divTwoText= null;
+    //     divThreeText = null;
+    //     divFourText = null;
+    //     divFiveText = null;
+    //     divSixText = null;
+    //     divSevenText = null;
+    //     divEightText = null;
+    //     divNineText = null;
 
 
-    }
+    // }
 
 
     
@@ -299,7 +299,8 @@ const gameStart = () => {
             alert("DRAW!!");
             console.log("DRRRRAAWWWW");
             gameOver = true;
-
+            count = 5;
+            
             // STOPS USER FROM DOING ANYTHING ELSE ONCE THE GAME IS OVER
             let stopShield = document.createElement('div');
             stopShield.style.backgroundColor = 'transparent';
@@ -746,12 +747,12 @@ const gameStart = () => {
             
             if(theDice === 1){
                 rolled1++;
-                onlyOnce++;
-                // if player lands on the highlighted platform, you will go twice at once in the 'tic tac no' board.
-                if(randomPowerSpawn === 1 && onlyOnce === 1){
-                    onlyOnce++;
-                    console.log("POWER UP!");
-                }
+                // onlyOnce++;
+                // // if player lands on the highlighted platform, you will go twice at once in the 'tic tac no' board.
+                // if(randomPowerSpawn === 1 && onlyOnce === 1){
+                //     onlyOnce++;
+                //     console.log("POWER UP!");
+                // }
 
                 console.log("rolled = " + rolled1);
                 two.style.backgroundColor = 'yellow';
@@ -1376,12 +1377,12 @@ const gameStart = () => {
         }else if(person === "Player 2"){
             if(theDice === 1){
                 rolled21++;
-                onlyOnce++;
-                // if player lands on the highlighted platform, you will go twice at once in the 'tic tac no' board.
-                if(randomPowerSpawn === 1 && onlyOnce === 1){
-                    onlyOnce++;
-                    console.log("POWER UP!");
-                }
+                // onlyOnce++;
+                // // if player lands on the highlighted platform, you will go twice at once in the 'tic tac no' board.
+                // if(randomPowerSpawn === 1 && onlyOnce === 1){
+                //     onlyOnce++;
+                //     console.log("POWER UP!");
+                // }
 
 
                 console.log("rolled = " + rolled21);
